@@ -28,14 +28,17 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         <Link href="/" className="text-xl font-display font-semibold tracking-widest uppercase hover:opacity-60 transition-opacity">
-          Studio Noir
+          Kutluhan Gül
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           <a href="#about" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             About
           </a>
+          <a href="#projects" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
+            Projects
+          </a>
           <a href="#gallery" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
-            Selected Works
+            Photography
           </a>
           <a href="#contact" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             Contact

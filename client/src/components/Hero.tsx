@@ -20,7 +20,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8"
         >
-          Fine Art Photography
+          Full Stack Developer & Photographer
         </motion.p>
         
         <motion.h1
@@ -29,19 +29,26 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="text-5xl md:text-7xl lg:text-8xl font-display font-medium text-balance leading-tight tracking-tight mb-12"
         >
-          Capturing the <span className="italic font-light">silence</span> between moments.
+          Building digital <span className="italic font-light">experiences</span> with precision.
         </motion.h1>
         
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
+          <a
+            href="#projects"
+            className="inline-block border border-foreground bg-foreground text-background px-8 py-4 text-xs uppercase tracking-widest hover:bg-transparent hover:text-foreground transition-all duration-500 ease-out"
+          >
+            View Projects
+          </a>
           <a
             href="#gallery"
             className="inline-block border border-foreground px-8 py-4 text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all duration-500 ease-out"
           >
-            View Portfolio
+            Photography
           </a>
         </motion.div>
       </div>

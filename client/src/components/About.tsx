@@ -28,24 +28,26 @@ export function About() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="text-3xl md:text-5xl font-display mb-8">
-              A study in <br/><span className="italic text-muted-foreground">monochrome</span>.
+              Kutluhan <br/><span className="italic text-muted-foreground">Gül</span>.
             </h2>
             <div className="space-y-6 text-foreground/70 font-light leading-relaxed text-lg">
               <p>
-                Based in Paris, I specialize in minimalist, high-contrast black and white photography. 
-                My work strips away the distraction of color to reveal the raw emotion, geometry, and texture of the subject.
+                I am a Full Stack Developer with a background in high-performance environments like Amazon and international hospitality. 
+                My journey into software development is fueled by a passion for building clean, scalable, and user-centered digital products.
               </p>
               <p>
-                Whether shooting architecture, intimate portraits, or desolate landscapes, my philosophy remains the same: 
-                simplicity is the ultimate sophistication. I believe that in the absence of color, light speaks loudest.
+                Specializing in React, Node.js, and TypeScript, I apply the same discipline and analytical thinking I developed during 
+                my 8+ years of professional experience to every line of code. I believe in the power of simplicity and well-structured architecture.
               </p>
               <p>
-                My work has been featured in international galleries and private collections, focusing on the interplay between deep shadows and stark highlights.
+                When I'm not coding, I'm capturing the world through my lens, focusing on the raw geometry and silent moments that often go unnoticed.
               </p>
             </div>
             
-            <div className="mt-12">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Signature_of_John_Hancock.svg" alt="Signature" className="h-12 opacity-80 invert dark:invert-0" />
+            <div className="mt-12 flex gap-6">
+              <a href="https://linkedin.com" target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">LinkedIn</a>
+              <a href="https://github.com" target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">GitHub</a>
+              <a href="#" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">Download CV</a>
             </div>
           </motion.div>
         </div>

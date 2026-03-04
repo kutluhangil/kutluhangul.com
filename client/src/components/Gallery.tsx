@@ -56,13 +56,13 @@ export function Gallery() {
   }
 
   return (
-    <section id="gallery" className="py-32 bg-background">
+    <section id="gallery" className="py-32 bg-background border-t border-border/40">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <h2 className="text-4xl md:text-5xl font-display mb-4">Selected Works</h2>
+            <h2 className="text-4xl md:text-5xl font-display mb-4">Photography</h2>
             <p className="text-muted-foreground max-w-md font-light">
-              An ongoing exploration of form, light, and texture.
+              Capturing the silence between moments. A monochromatic perspective.
             </p>
           </div>
         </div>

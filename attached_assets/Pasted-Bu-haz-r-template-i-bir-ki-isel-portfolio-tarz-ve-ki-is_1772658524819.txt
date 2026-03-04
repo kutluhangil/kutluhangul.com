@@ -1,0 +1,464 @@
+Bu hazır template i bir kişisel portfolio tarzı ve kişisel blog gibi kullanmak istiyorum. Ben full stack developer eğitimi alıyrum. Orada yaptığım projeleri eklemek istiyorum. Github repoyu linkendin sayfamı linkimi CV mi ne varsa. Bu zamana kadar yapılmış bu tarz site içeriklerini incele. Bu isteyi o tasarıma sadık kalarak böyle bir şey çevirmek istiyorum. Sana bir kaç girdi vereyim bunları ekle mesala. Sana CV mi ekledim. Burada ki bilgileri tasarıma sadık kalacak şekilde aktar.İnternetten örneklerine bak. Nasıl yapılacağını bilmiyorum. linkedin sayfam: https://www.linkedin.com/in/kutluhangil/ github sayfam: https://github.com/kutluhangil bunları açabiliyorsan kalan bilgileri de buradan alabilirsin. Sana hatta yaptığım iki projeyinin github repo da ki readme.md dosyalarını ekleyim. Bunları kendi tasarımına göre ekle. İlki bu: "
+
+🎬 CINEMANIA — Digital Movie Discovery Platform
+
+A modern, responsive movie discovery experience powered by real-time film data.
+
+Cinemania is a fully responsive, multi-page web application developed as a collaborative group project within the GoIT Full Stack Developer Program. The platform allows users to discover trending movies, explore upcoming releases, manage a personal movie library, and view detailed movie information using real-time data from The Movie Database (TMDB) API.
+
+🌐 Live Demo
+
+👉 GitHub Pages — Cinemania
+
+📋 Table of Contents
+
+About the Project
+
+API Integration
+
+Core Features (MVP)
+
+Additional Features
+
+Technical Requirements
+
+Project Structure
+
+Technologies Used
+
+Team Members & Responsibilities
+
+Screenshots
+
+License
+
+📖 About the Project
+
+Cinemania simulates a real-world movie discovery platform. Users can browse trending films, search movies by keyword or year, explore upcoming releases, and manage a personalized movie library.
+
+The application is designed with a Mobile-First approach and follows modern frontend best practices including semantic HTML, modular CSS architecture, and asynchronous JavaScript logic.
+
+🎞️ API Integration
+
+API Provider: TMDB
+
+Documentation: TMDB Docs
+
+✨ Core Features (MVP)
+
+Mobile-first responsive layout (320px / 768px / 1280px)
+
+Theme switcher (Dark / Light) with localStorage persistence
+
+Hero section with daily trending movie
+
+Movie detail modal with trailer support
+
+My Library with add/remove logic (localStorage)
+
+Footer with team modal (GoIT Students)
+
+🚀 Additional Features
+
+Weekly Trends & Upcoming This Month sections
+
+Catalog search with year filter
+
+Server-side pagination
+
+Load more functionality
+
+Scroll-to-top button
+
+Global loader (spinner) for async requests
+
+⚙️ Technical Requirements
+
+Semantic HTML5
+
+Modern-normalize integrated
+
+Fonts via @font-face</code></li>
+
+Optimized retina-ready images
+
+All static assets under src/images
+
+Passed W3C HTML & CSS validation
+
+PageSpeed score ≥ 80%
+
+No console errors
+
+Published on GitHub Pages
+
+🏗️ Project Structure
+
+src/ ├── css/ ├── js/ ├── images/ │ ├── footer/ │ └── readme/ ├── partials/ ├── index.html ├── my-library.html └── main.js
+
+🛠️ Technologies Used
+
+HTML5
+
+CSS3 (Flexbox & Grid)
+
+Vanilla JavaScript (ES6+)
+
+Vite
+
+Git & GitHub
+
+TMDB API
+
+👥 Geliştirici Ekip & Sorumluluklar
+
+Çiğdem Ergal — Team Lead
+
+Sorumluluk: Header & Liderlik
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Halenur Gürel — Scrum Master
+
+Sorumluluk: Hero & Scrum Yönetimi
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Ali Hamza Çakmak — Developer
+
+Sorumluluk: Modals (Detail & Trailer)
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Aslıhan Erdal — Developer
+
+Sorumluluk: Upcoming This Month
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Burak Gökay — Developer
+
+Sorumluluk: Weekly Trends
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Kerem Yıldırım — Developer
+
+Sorumluluk: Catalog
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Yusuf Soylu — Developer
+
+Sorumluluk: Pagination
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Nur Seda Ağgünlü — Developer
+
+Sorumluluk: My Library
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Zehra Yazıcı — Developer
+
+Sorumluluk: My Library Hero
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+Kutluhan Gül — Developer
+
+Sorumluluk: Footer & Team Modal
+
+
+  
+
+
+  
+📸 Screenshots
+
+Desktop Views
+
+Tablet & Mobile Views
+
+📜 License
+
+This project was created for educational purposes as part of the GoIT Full Stack Developer program.
+
+© 2024 Cinemania — All rights reserved. " ikincisi de: "
+
+📸 Focus.Frame — Single-Page Photography Website
+
+Discover the magic of photography in our school!
+
+Focus.Frame is a single-page, fully responsive photography school website developed as part of the GoIT Full Stack Developer course. The page includes sections for courses, mentors, reviews, contact information, and a professional footer.
+
+🌐 Live Demo
+
+👉 GitHub Pages (add link)
+
+📋 Table of Contents
+
+About the Project
+
+Core Features & Requirements
+
+Technical Specifications
+
+Project Structure (Sections)
+
+Features
+
+Technologies Used
+
+Team Members
+
+Challenges
+
+Screenshots
+
+License
+
+📖 About the Project
+
+Focus.Frame simulates a real landing page experience:
+
+A Hero section introducing the school
+
+Course cards (Basics, Landscape, Portrait)
+
+Mentor profiles
+
+Student Reviews
+
+A Sign Up form
+
+A Footer with social links and contact information
+
+✨ Core Features and Requirements
+
+Layout and Responsiveness 📱💻🖥️
+
+Mobile: Responsive from 375px
+
+Tablet: Responsive from 768px
+
+Desktop: Responsive from 1280px (optional optimization for 1440px)
+
+⚙️ Technical Specifications
+
+Validation: Must pass HTML/CSS validation:
+
+validator.w3.org
+
+jigsaw.w3.org/css-validator
+
+pagespeed.web.dev
+
+Semantics: Must comply with HTML5 semantic standards
+
+Fonts: Must be linked externally
+
+Image Optimization:
+
+Optimized dimensions for vector and raster images
+
+Support for Retina displays
+
+Optimized image loading
+
+SVG Icons: All icons must be linked via a sprite
+
+Favicon: A favicon image must be added
+
+🏗️ Project Structure (Sections)
+
+Header: Includes logo, navigation, and a “Sign Up” link (camera icon on mobile). On mobile, the navigation menu is a fixed dropdown sidebar that fills the viewport height. Header and Hero share a dotted grid PNG background applied to a wrapper.
+
+Hero: Heading: “Discover the magic of photography in our school.” Contains descriptive text, student info, and references. The “Our happy students” link redirects to the Reviews section.
+
+Advertisement: Single-line heading: “Master your photography skills with us!”
+
+About Us: Heading: “About us.” Images must be content images.
+
+Our Courses: Heading: “Our courses.” List implemented with <ol>. Each card includes: number + title + description + ⇗ link (redirects to Sign Up).
+
+Our Mentors: Heading: “Our Mentors.” List implemented with <ul>. Each card includes: photo (content image) + name + experience.
+
+Sign Up: Heading: “Sign up.” The form includes <input pattern>, a <textarea>, and a type="submit" “Send” button.
+
+Reviews: Heading: “Reviews.” List implemented with <ul>. Each review card includes: photo + name + status + feedback + rating.
+
+Footer: Includes logo, contact info, social links, site links, a required input with pattern, and a “Go” button.
+
+Phone number implemented with link protocols (tel:)
+
+Social links implemented with <ul> and open in a new tab:
+
+Instagram
+
+      @GoITTurkey" target="_blank" rel="noopener">YouTube
+      
+Facebook
+
+Dotted grid background applied as a PNG image
+
+💡 Features
+
+Fully responsive (mobile–tablet–desktop)
+
+Flexbox & CSS Grid layout
+
+Semantic HTML structure
+
+Modern typography and UI styled according to Figma design
+
+Footer with company info, quick links, and subscription form
+
+🛠️ Technologies Used
+
+HTML5 — Semantic structure
+
+CSS3 — Styling & responsive layout
+
+Flexbox & CSS Grid — Page layout
+
+Git & GitHub — Version control & collaboration
+
+Figma — Design reference
+
+👥 Team Members
+
+This project was developed collaboratively as part of the GoIT group project.
+
+Team Leader: Emiralp Saka
+
+Scrum Master: Esra Aras
+
+Section Responsibilities:
+
+Header: Ayşegül Gök
+
+Hero: Esra Aras
+
+About Us: Emiralp Saka
+
+Our Courses: Ali Kemal Demir
+
+Our Mentors: Rıdvan Kesken
+
+Sign Up: Nur Seda Ağgünlü
+
+Reviews: Gülnihan Yazıcı
+
+Footer: Kutluhan Gül
+
+We collaborated using GitHub branches, Pull Requests, and Trello for task management.
+
+🚧 Challenges
+
+Maintaining pixel-perfect alignment with Figma mockups
+
+Ensuring responsive design at all breakpoints
+
+Keeping fonts, spacing, and icons consistent
+
+Team coordination and resolving merge conflicts
+
+📸 Screenshots
+
+📜 License
+
+This project is created for educational purposes under the GoIT Full Stack Developer course.
+
+© 2024 Focus.Frame — All rights reserved " Bunlarsın sana görsellerini de ekleyim şimdi. İki tane daha görsel ekledim. Bunlar projenin görselleri. Bunu da ekle kendi içinde. Şimdilik böyle başla bakalım nasıl bir şey çıkacak.
