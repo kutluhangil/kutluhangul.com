@@ -32,12 +32,13 @@ export function About() {
             </h2>
             <div className="space-y-6 text-foreground/70 font-light leading-relaxed text-lg">
               <p>
-                I am a Full Stack Developer with a background in high-performance environments like Amazon and international hospitality. 
-                My journey into software development is fueled by a passion for building clean, scalable, and user-centered digital products.
+                I am a Full Stack Developer with 2.5+ years of experience as a Senior Selling Partner Support Associate at Amazon, 
+                where I handled complex cases and technical troubleshooting in high-performance environments. 
+                In 2024, I made a deliberate transition into software development, focusing on building clean, scalable, and user-centered digital products.
               </p>
               <p>
-                Specializing in React, Node.js, and TypeScript, I apply the same discipline and analytical thinking I developed during 
-                my 8+ years of professional experience to every line of code. I believe in the power of simplicity and well-structured architecture.
+                Specializing in HTML, CSS, JavaScript, React, and Node.js, I bring strong analytical thinking and problem-solving skills 
+                from my 8+ years of international professional experience. I am an associate degree graduate in Computer Programming and Web Coding from Anadolu University.
               </p>
               <p>
                 When I'm not coding, I'm capturing the world through my lens, focusing on the raw geometry and silent moments that often go unnoticed.

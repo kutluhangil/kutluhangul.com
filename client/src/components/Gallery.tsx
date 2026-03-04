@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { usePhotos } from "@/hooks/use-photos";
-import { Loader2 } from "lucide-react";
+import { Loader2, X } from "lucide-react";
 
 // Fallback high-end photography if API is empty
 const FALLBACK_PHOTOS = [
@@ -44,6 +45,7 @@ const FALLBACK_PHOTOS = [
 
 export function Gallery() {
   const { data: photos, isLoading, error } = usePhotos();
+  const [selectedPhoto, setSelectedPhoto] = useState<typeof FALLBACK_PHOTOS[0] | null>(null);
 
   const displayPhotos = photos && photos.length > 0 ? photos : FALLBACK_PHOTOS;
 
@@ -81,6 +83,8 @@ export function Gallery() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
                 className="group cursor-pointer"
+                onClick={() => setSelectedPhoto(photo)}
+                data-testid={`card-photo-${photo.id}`}
               >
                 <div className="aspect-[4/5] overflow-hidden bg-muted mb-6 relative">
                   <img
@@ -103,6 +107,43 @@ export function Gallery() {
           </div>
         )}
       </div>
+
+      <AnimatePresence>
+        {selectedPhoto && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedPhoto(null)}
+              className="absolute inset-0 bg-background/90 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="relative max-w-5xl max-h-full flex flex-col items-center"
+            >
+              <button 
+                onClick={() => setSelectedPhoto(null)}
+                className="absolute -top-12 right-0 md:-right-12 text-foreground hover:opacity-60 transition-opacity"
+                data-testid="button-close-photo"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              <img
+                src={selectedPhoto.url}
+                alt={selectedPhoto.title}
+                className="w-full h-full object-contain grayscale shadow-2xl"
+              />
+              <div className="mt-6 text-center">
+                <h3 className="text-xl font-display mb-2">{selectedPhoto.title}</h3>
+                <p className="text-muted-foreground font-light">{selectedPhoto.description}</p>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
