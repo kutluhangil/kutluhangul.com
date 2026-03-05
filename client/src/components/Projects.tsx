@@ -64,6 +64,16 @@ const projects = [
           </ul>
         </div>
         <div>
+          <h4 className="font-semibold text-foreground mb-2 italic">Project Structure</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground text-sm">
+            <li><strong>Header:</strong> Logo, navigation, and Sign Up link with fixed dropdown sidebar on mobile.</li>
+            <li><strong>Hero:</strong> Atmospheric introduction with student info and references.</li>
+            <li><strong>Courses:</strong> Detailed list of photography courses with numbered cards.</li>
+            <li><strong>Mentors & Reviews:</strong> Professional profiles and student feedback with rating system.</li>
+            <li><strong>Footer:</strong> Comprehensive company info, social links (Instagram, YouTube, Facebook), and subscription form.</li>
+          </ul>
+        </div>
+        <div>
           <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
           <p className="text-muted-foreground">HTML5, CSS3, Flexbox & CSS Grid, Git & GitHub, Figma design reference.</p>
         </div>
@@ -71,8 +81,8 @@ const projects = [
     ),
     image: focusFrameImg,
     links: {
-      github: "https://github.com",
-      live: "https://github.com"
+      github: "https://github.com/kutluhangil/goit-focusframe-project",
+      live: "https://kutluhangil.github.io/goit-focusframe-project/"
     }
   }
 ];
