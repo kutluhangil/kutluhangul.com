@@ -9,7 +9,7 @@ const projects = [
     title: "CINEMANIA",
     subtitle: "Digital Movie Discovery Platform",
     description: "A fully responsive, multi-page web application developed as a collaborative group project within the GoIT Full Stack Developer Program. The platform allows users to discover trending movies, explore upcoming releases, manage a personal movie library, and view detailed movie information using real-time data from The Movie Database (TMDB) API.",
-    fullDescription: "Cinemania simulates a real-world movie discovery platform. The application is designed with a Mobile-First approach and follows modern frontend best practices including semantic HTML, modular CSS architecture, and asynchronous JavaScript logic. Features include: Theme switcher (Dark / Light) with localStorage, Movie detail modal with trailer support, My Library with add/remove logic (localStorage), Weekly Trends & Upcoming sections, Catalog search with year filter, and Server-side pagination.",
+    fullDescription: "Cinemania simulates a real-world movie discovery platform. The application is designed with a Mobile-First approach and follows modern frontend best practices including semantic HTML, modular CSS architecture, and asynchronous JavaScript logic. Features include: Theme switcher (Dark / Light) with localStorage, Movie detail modal with trailer support, My Library with add/remove logic (localStorage), Weekly Trends & Upcoming sections, Catalog search with year filter, and Server-side pagination. Developed as a collaborative group project within the GoIT Full Stack Developer Program.",
     image: cinemaniaImg,
     links: {
       github: "https://github.com",
@@ -20,7 +20,7 @@ const projects = [
     title: "FOCUS FRAME",
     subtitle: "Photography School Landing Page",
     description: "A single-page, fully responsive photography school website developed as part of the GoIT Full Stack Developer course. The page includes sections for courses, mentors, reviews, contact information, and a professional footer.",
-    fullDescription: "Focus.Frame simulates a real landing page experience with a Hero section, Course cards (Basics, Landscape, Portrait), Mentor profiles, Student Reviews, and a Sign Up form. Technical features include: Mobile-first responsive layout (375px / 768px / 1280px), Image optimization for Retina displays, SVG icons via sprite, and validated HTML5/CSS3 semantics. Dotted grid background applied as a PNG image for a technical, precise look.",
+    fullDescription: "Focus.Frame simulates a real landing page experience with a Hero section, Course cards (Basics, Landscape, Portrait), Mentor profiles, Student Reviews, and a Sign Up form. Technical features include: Mobile-first responsive layout (375px / 768px / 1280px), Image optimization for Retina displays, SVG icons via sprite, and validated HTML5/CSS3 semantics. Dotted grid background applied as a PNG image for a technical, precise look. Developed as part of the GoIT Full Stack Developer course.",
     image: focusFrameImg,
     links: {
       github: "https://github.com",
