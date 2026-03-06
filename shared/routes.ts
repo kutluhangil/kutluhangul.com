@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertPhotoSchema, insertMessageSchema, photos, messages } from './schema';
+import { insertPostSchema, insertMessageSchema, posts, messages, nowContent } from './schema';
 
 export const errorSchemas = {
   validation: z.object({
@@ -15,12 +15,29 @@ export const errorSchemas = {
 };
 
 export const api = {
-  photos: {
+  posts: {
     list: {
       method: 'GET' as const,
-      path: '/api/photos' as const,
+      path: '/api/posts' as const,
       responses: {
-        200: z.array(z.custom<typeof photos.$inferSelect>()),
+        200: z.array(z.custom<typeof posts.$inferSelect>()),
+      },
+    },
+    get: {
+      method: 'GET' as const,
+      path: '/api/posts/:slug' as const,
+      responses: {
+        200: z.custom<typeof posts.$inferSelect>(),
+        404: errorSchemas.notFound,
+      },
+    },
+  },
+  now: {
+    get: {
+      method: 'GET' as const,
+      path: '/api/now' as const,
+      responses: {
+        200: z.custom<typeof nowContent.$inferSelect>(),
       },
     },
   },

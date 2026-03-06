@@ -1,0 +1,60 @@
+I am building a personal developer blog and portfolio website.  
+
+The site already includes these sections:
+- About
+- Projects
+- CV / Resume
+
+I want to improve the website and make it look like a modern professional developer portfolio.
+
+Please help me design the complete structure of the website and explain what content should exist in each section.
+
+Include and explain the following pages:
+
+1. Blog / Articles  
+Explain why a blog is useful for a developer portfolio.  
+Provide examples of article topics a developer could write about (for example learning experiences, project breakdowns, coding tips, etc.).
+
+2. Skills / Tech Stack  
+Explain how a developer should present their technical skills.  
+Organize them into categories such as:
+- Frontend
+- Backend
+- Tools
+
+3. Project Case Studies  
+Explain how to present projects in a detailed way.  
+Describe what information each project page should include (description, tech stack, challenges, lessons learned, GitHub link, live demo).
+
+4. Now Page  
+Explain the concept of a “Now” page and what kind of information it typically contains (what the developer is currently learning, building, or looking for).
+
+5. Contact Page  
+Explain what information should appear on a contact page and how visitors or recruiters can reach the developer.
+
+6. Resume / CV Section  
+Explain how the resume should be presented (view online and download PDF).
+
+7. Uses Page  
+Explain the idea of a “Uses” page where the developer shares the hardware, software, and tools they use for development.
+
+8. Learning Notes / Notes Page  
+Explain how short technical notes can be published (cheat sheets, summaries, commands, coding concepts).
+
+9. Build in Public Page  
+Explain the concept of “building in public” and how developers can share ideas, experiments, or projects they are currently working on.
+
+Finally, propose a clean and modern site structure similar to this:
+
+Home  
+About  
+Projects  
+Blog  
+Notes  
+Now  
+Resume  
+Contact  
+
+Explain briefly what should appear on each page so the website looks professional and useful for recruiters and other developers.
+
+The explanation should be clear, structured, and easy to follow.

@@ -9,9 +9,20 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   
-  app.get(api.photos.list.path, async (req, res) => {
-    const allPhotos = await storage.getPhotos();
-    res.json(allPhotos);
+  app.get(api.posts.list.path, async (req, res) => {
+    const allPosts = await storage.getPosts();
+    res.json(allPosts);
+  });
+
+  app.get(api.posts.get.path, async (req, res) => {
+    const post = await storage.getPostBySlug(req.params.slug);
+    if (!post) return res.status(404).json({ message: "Post not found" });
+    res.json(post);
+  });
+
+  app.get(api.now.get.path, async (req, res) => {
+    const now = await storage.getNow();
+    res.json(now || { content: "Currently building and learning new things." });
   });
 
   app.post(api.messages.create.path, async (req, res) => {

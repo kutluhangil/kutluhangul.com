@@ -31,15 +31,21 @@ export function Navigation() {
           Kutluhan Gül
         </Link>
         <nav className="hidden md:flex items-center gap-8">
+          <Link href="/" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
+            Home
+          </Link>
           <a href="#about" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             About
           </a>
           <a href="#projects" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             Projects
           </a>
-          <a href="#gallery" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
-            Photography
-          </a>
+          <Link href="/blog" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
+            Blog
+          </Link>
+          <Link href="/now" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
+            Now
+          </Link>
           <a href="#contact" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             Contact
           </a>
