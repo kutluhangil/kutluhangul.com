@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Now from "./pages/Now";
+import Uses from "./pages/Uses";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -19,6 +20,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/blog" component={Blog} />
           <Route path="/now" component={Now} />
+          <Route path="/uses" component={Uses} />
           <Route component={NotFound} />
         </Switch>
       </main>

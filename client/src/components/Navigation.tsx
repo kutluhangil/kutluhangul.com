@@ -43,9 +43,18 @@ export function Navigation() {
           <Link href="/blog" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             Blog
           </Link>
+          <Link href="/blog?category=Note" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
+            Notes
+          </Link>
           <Link href="/now" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             Now
           </Link>
+          <Link href="/uses" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
+            Uses
+          </Link>
+          <a href="#about" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
+            CV
+          </a>
           <a href="#contact" className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors">
             Contact
           </a>

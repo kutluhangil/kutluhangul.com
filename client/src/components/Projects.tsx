@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import cinemaniaImg from "@assets/Desktop_Home_1772658643356.png";
 import focusFrameImg from "@assets/FocusFrame_1440_1772658643357.png";
 import moneyGuardImg from "@assets/Desktop3_1772813924846.png";
-import { X } from "lucide-react";
+import { X, ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -11,33 +11,40 @@ const projects = [
     subtitle: "Digital Movie Discovery Platform",
     description: "A fully responsive, multi-page web application developed as a collaborative group project within the GoIT Full Stack Developer Program. The platform allows users to discover trending movies, explore upcoming releases, manage a personal movie library, and view detailed movie information using real-time data from The Movie Database (TMDB) API.",
     fullDescription: (
-      <div className="space-y-4 text-sm md:text-base">
-        <p>
-          Cinemania simulates a real-world movie discovery platform. Users can browse trending films, search movies by keyword or year, explore upcoming releases, and manage a personalized movie library.
-        </p>
-        <div>
+      <div className="space-y-6 text-sm md:text-base">
+        <section>
+          <h4 className="font-semibold text-foreground mb-2 italic">Project Overview</h4>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            Cinemania simulates a real-world movie discovery platform. Users can browse trending films, search movies by keyword or year, explore upcoming releases, and manage a personalized movie library. The application is designed with a Mobile-First approach and follows modern frontend best practices.
+          </p>
+        </section>
+
+        <section>
           <h4 className="font-semibold text-foreground mb-2 italic">Core Features (MVP)</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light">
             <li>Mobile-first responsive layout (320px / 768px / 1280px)</li>
             <li>Theme switcher (Dark / Light) with localStorage persistence</li>
             <li>Hero section with daily trending movie</li>
             <li>Movie detail modal with trailer support</li>
             <li>My Library with add/remove logic (localStorage)</li>
           </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-foreground mb-2 italic">Additional Features</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-            <li>Weekly Trends & Upcoming This Month sections</li>
-            <li>Catalog search with year filter</li>
-            <li>Server-side pagination & Load more functionality</li>
-            <li>Global loader (spinner) for async requests</li>
-          </ul>
-        </div>
-        <div>
+        </section>
+
+        <section>
+          <h4 className="font-semibold text-foreground mb-2 italic">Challenges & Lessons</h4>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            Managing asynchronous data fetching from TMDB and ensuring a seamless UI across different viewports were the primary challenges. I learned the importance of modular CSS architecture and efficient state management for a multi-page application.
+          </p>
+        </section>
+
+        <section>
           <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
-          <p className="text-muted-foreground">HTML5, CSS3 (Flexbox & Grid), Vanilla JavaScript (ES6+), Vite, Git & GitHub, TMDB API.</p>
-        </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {["HTML5", "CSS3", "Vanilla JS", "Vite", "TMDB API", "Git"].map(tech => (
+              <span key={tech} className="px-2 py-1 bg-muted/50 text-[10px] uppercase tracking-wider border border-border/40">{tech}</span>
+            ))}
+          </div>
+        </section>
       </div>
     ),
     image: cinemaniaImg,
@@ -51,33 +58,39 @@ const projects = [
     subtitle: "Photography School Landing Page",
     description: "A single-page, fully responsive photography school website developed as part of the GoIT Full Stack Developer course. The page includes sections for courses, mentors, reviews, contact information, and a professional footer.",
     fullDescription: (
-      <div className="space-y-4 text-sm md:text-base">
-        <p>
-          Focus.Frame simulates a real landing page experience with a Hero section, Course cards (Basics, Landscape, Portrait), Mentor profiles, Student Reviews, and a Sign Up form.
-        </p>
-        <div>
+      <div className="space-y-6 text-sm md:text-base">
+        <section>
+          <h4 className="font-semibold text-foreground mb-2 italic">Project Overview</h4>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            Focus.Frame simulates a real landing page experience for a photography school. It includes a hero section, course cards, mentor profiles, student reviews, and a sign-up form.
+          </p>
+        </section>
+
+        <section>
           <h4 className="font-semibold text-foreground mb-2 italic">Technical Specifications</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light">
             <li>Mobile-first responsive layout (375px / 768px / 1280px)</li>
             <li>Image optimization for Retina displays</li>
             <li>SVG icons via sprite & Validated HTML5/CSS3 semantics</li>
             <li>Dotted grid background applied as a PNG image for a technical look</li>
           </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-foreground mb-2 italic">Project Structure</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground text-sm">
-            <li><strong>Header:</strong> Logo, navigation, and Sign Up link with fixed dropdown sidebar on mobile.</li>
-            <li><strong>Hero:</strong> Atmospheric introduction with student info and references.</li>
-            <li><strong>Courses:</strong> Detailed list of photography courses with numbered cards.</li>
-            <li><strong>Mentors & Reviews:</strong> Professional profiles and student feedback with rating system.</li>
-            <li><strong>Footer:</strong> Comprehensive company info, social links (Instagram, YouTube, Facebook), and subscription form.</li>
-          </ul>
-        </div>
-        <div>
+        </section>
+
+        <section>
+          <h4 className="font-semibold text-foreground mb-2 italic">Challenges & Lessons</h4>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            Maintaining pixel-perfect alignment with Figma mockups was crucial. I strengthened my skills in Flexbox and CSS Grid while ensuring consistent spacing and typography across all breakpoints.
+          </p>
+        </section>
+
+        <section>
           <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
-          <p className="text-muted-foreground">HTML5, CSS3, Flexbox & CSS Grid, Git & GitHub, Figma design reference.</p>
-        </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {["HTML5", "CSS3", "Flexbox", "CSS Grid", "Figma", "Git"].map(tech => (
+              <span key={tech} className="px-2 py-1 bg-muted/50 text-[10px] uppercase tracking-wider border border-border/40">{tech}</span>
+            ))}
+          </div>
+        </section>
       </div>
     ),
     image: focusFrameImg,
@@ -91,33 +104,40 @@ const projects = [
     subtitle: "Personal Finance Management App",
     description: "A fully responsive financial management application developed as a collaborative team project. The application allows users to securely register, log in, manage income and expense transactions, and track total balance in real time.",
     fullDescription: (
-      <div className="space-y-4 text-sm md:text-base">
-        <p>
-          Money Guard is a React-based financial tracking system where users can add, edit, or delete transactions, view monthly statistics via charts, and monitor real-time currency exchange rates.
-        </p>
-        <div>
+      <div className="space-y-6 text-sm md:text-base">
+        <section>
+          <h4 className="font-semibold text-foreground mb-2 italic">Project Overview</h4>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            Money Guard is a React-based financial tracking system. Users can securely manage their finances, track transactions, and visualize their spending habits through interactive statistics.
+          </p>
+        </section>
+
+        <section>
           <h4 className="font-semibold text-foreground mb-2 italic">Core Features</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light">
             <li>Secure Authentication (Register / Login / Logout)</li>
             <li>Transaction CRUD operations with automatic balance sync</li>
             <li>Statistics Dashboard with interactive charts (Chart.js)</li>
             <li>Currency integration with Monobank API & LocalStorage cache</li>
             <li>JWT token persistence via redux-persist</li>
           </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold text-foreground mb-2 italic">Technical Architecture</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-            <li>React 18 & Redux Toolkit for state management</li>
-            <li>React Router for private/public route protection</li>
-            <li>Form validation with react-hook-form & Yup</li>
-            <li>Mobile-first responsive design (Grid & Flexbox)</li>
-          </ul>
-        </div>
-        <div>
+        </section>
+
+        <section>
+          <h4 className="font-semibold text-foreground mb-2 italic">Challenges & Lessons</h4>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            Implementing global state management with Redux Toolkit and ensuring data persistence were key challenges. I learned how to handle complex asynchronous operations and synchronized state across different components.
+          </p>
+        </section>
+
+        <section>
           <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
-          <p className="text-muted-foreground">React, Redux Toolkit, redux-persist, React Router, react-chartjs-2, Axios, Vite.</p>
-        </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {["React", "Redux Toolkit", "Chart.js", "Axios", "Vite", "Yup"].map(tech => (
+              <span key={tech} className="px-2 py-1 bg-muted/50 text-[10px] uppercase tracking-wider border border-border/40">{tech}</span>
+            ))}
+          </div>
+        </section>
       </div>
     ),
     image: moneyGuardImg,
@@ -135,9 +155,9 @@ export function Projects() {
     <section id="projects" className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-display mb-4">Development Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-display mb-4">Project Case Studies</h2>
           <p className="text-muted-foreground max-w-md font-light">
-            Selected works from my journey as a Full Stack Developer.
+            Detailed breakdowns of my technical projects, featuring challenges, solutions, and architectural choices.
           </p>
         </div>
 
@@ -167,7 +187,9 @@ export function Projects() {
                   {project.description}
                 </p>
                 <div className="flex gap-6">
-                  <span className="text-xs uppercase tracking-widest border-b border-foreground/20 group-hover:border-foreground transition-colors pb-1">View Details</span>
+                  <span className="text-xs uppercase tracking-widest border-b border-foreground/20 group-hover:border-foreground transition-colors pb-1 flex items-center gap-2">
+                    Case Study Details
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -214,8 +236,12 @@ export function Projects() {
                     {selectedProject.fullDescription}
                   </div>
                   <div className="flex flex-wrap gap-8">
-                    <a href={selectedProject.links.github} target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">GitHub Repo</a>
-                    <a href={selectedProject.links.live} target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">Live Demo</a>
+                    <a href={selectedProject.links.github} target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 flex items-center gap-2">
+                      <Github className="w-3 h-3" /> GitHub Repo
+                    </a>
+                    <a href={selectedProject.links.live} target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 flex items-center gap-2">
+                      <ExternalLink className="w-3 h-3" /> Live Demo
+                    </a>
                   </div>
                 </div>
               </div>

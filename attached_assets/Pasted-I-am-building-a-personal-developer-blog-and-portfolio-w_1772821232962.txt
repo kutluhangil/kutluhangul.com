@@ -1,0 +1,138 @@
+I am building a personal developer blog and portfolio website.
+
+Currently the website already includes these sections:
+- About
+- Projects
+- CV / Resume
+
+I want to improve the website so it looks like a modern and professional developer portfolio used by full-stack developers when applying for jobs.
+
+Please help me expand the website by explaining and structuring the following sections.
+
+For each section:
+- explain its purpose
+- describe what content should be included
+- provide example content where appropriate
+
+Sections to include:
+
+1. Blog / Articles  
+Explain why a blog is valuable for a developer portfolio.  
+Provide example article topics such as:
+- How I built my first React project
+- What I learned from building a full stack application
+- CSS tips I learned while studying
+- How I deployed my first project
+
+Also provide an example blog URL structure like:
+
+/blog  
+- building-my-first-react-app  
+- css-tricks-i-learned  
+- lessons-from-my-fullstack-course
+
+2. Skills / Tech Stack  
+Explain how a developer should present their skills.  
+Organize them into categories such as:
+
+Frontend  
+- HTML  
+- CSS  
+- JavaScript  
+- React  
+- TypeScript  
+- Redux  
+
+Backend  
+- Node.js  
+- Express  
+- REST API  
+
+Tools  
+- Git  
+- GitHub  
+- VS Code  
+- Figma  
+- Postman  
+
+3. Project Case Studies  
+Explain how to present projects in detail instead of just listing them.  
+Each project should include:
+- Description
+- Tech stack
+- Problems faced during development
+- What was learned
+- Live demo link
+- GitHub repository
+
+4. Now Page  
+Explain the concept of a “Now” page used on developer websites.  
+Include examples such as:
+
+Currently learning  
+Currently building  
+Currently looking for (for example junior developer roles)
+
+5. Contact Page  
+Explain what information should be included on a contact page.  
+For example:
+- Email
+- LinkedIn
+- GitHub
+- Optional social accounts
+- Optional contact form
+
+6. Resume Section  
+Explain how a resume should be displayed, including:
+- View online
+- Download as PDF
+
+7. Uses Page  
+Explain the idea of a “Uses” page where developers share the tools they use.
+
+Example sections:
+Hardware
+- Mac Mini
+
+Development
+- VS Code
+- GitHub
+- Figma
+
+Tools
+- Postman
+- Chrome DevTools
+
+8. Learning Notes  
+Explain a section where short technical notes are shared.
+
+Example notes:
+- CSS Flexbox cheatsheet
+- Git commands
+- React hooks summary
+
+9. Build in Public Page  
+Explain the concept of building projects publicly and sharing ideas or experiments.
+
+Example content:
+- Projects currently being built
+- Startup ideas
+- Experiments
+
+Example projects:
+- NextStep
+- Comic Wall
+- MoneyGuard
+
+Finally, suggest a clean and modern developer portfolio navigation structure like this:
+
+Home  
+About  
+Projects  
+Blog  
+Notes  
+Now  
+CV  
+Contact  
+
+Make the explanation clear and structured so it can be used directly when designing a developer portfolio website.

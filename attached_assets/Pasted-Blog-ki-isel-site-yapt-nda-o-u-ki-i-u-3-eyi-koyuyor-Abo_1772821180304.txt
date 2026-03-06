@@ -1,0 +1,216 @@
+Blog / kişisel site yaptığında çoğu kişi şu 3 şeyi koyuyor:
+	•	About
+	•	Projects
+	•	CV
+
+Ama iyi bir developer portfolio/blog biraz daha fazlasını içeriyor. Özellikle senin gibi full-stack developer olarak iş başvurularında kullanacaksan bazı ek bölümler çok fark yaratır.
+
+Aşağıya en değerli ekleyebileceğin bölümleri önem sırasıyla yazıyorum.
+
+⸻
+
+1️⃣ Blog / Articles (En önemli eksik olabilir)
+
+Gerçek blog kısmı.
+
+Buraya kısa teknik yazılar koyabilirsin:
+
+Örnek konular:
+	•	“How I built my first React project”
+	•	“What I learned from building a Full Stack App”
+	•	“CSS tips I learned while studying”
+	•	“How I deployed my first project”
+
+Avantajı:
+	•	Recruiter kod yazdığını + düşündüğünü görür
+	•	SEO getirir
+	•	GitHub’dan daha iyi anlatım sağlar
+
+Örnek başlıklar:
+
+/blog
+  - building-my-first-react-app
+  - css-tricks-i-learned
+  - lessons-from-my-fullstack-course
+
+
+⸻
+
+2️⃣ Skills / Tech Stack
+
+Projelerin yanında skills bölümü çok iyi olur.
+
+Örnek:
+
+Frontend
+	•	HTML
+	•	CSS
+	•	JavaScript
+	•	React
+	•	TypeScript
+	•	Redux
+
+Backend
+	•	Node.js
+	•	Express
+	•	REST API
+
+Tools
+	•	Git
+	•	GitHub
+	•	VS Code
+	•	Figma
+	•	Postman
+
+⸻
+
+3️⃣ Project Case Studies
+
+Projeyi sadece göstermek yerine nasıl yaptığını anlatmak çok güçlü olur.
+
+Örnek:
+
+Cinemania
+	•	Description
+	•	Tech stack
+	•	Problems I faced
+	•	What I learned
+	•	Live demo
+	•	GitHub
+
+Bu seni junior değil gerçek developer gibi gösterir.
+
+⸻
+
+4️⃣ Now Page
+
+Developer sitelerinde popüler.
+
+/now
+
+Şu anda ne yaptığını yazarsın.
+
+Örnek:
+
+Currently learning:
+- Full Stack Development (GoIT)
+
+Currently building:
+- Personal finance tracker
+- Portfolio blog
+
+Looking for:
+- Junior Full Stack Developer roles
+
+
+⸻
+
+5️⃣ Contact Page
+
+Basit ama önemli.
+
+Email
+LinkedIn
+GitHub
+Twitter (opsiyonel)
+
+İstersen contact form da ekleyebilirsin.
+
+⸻
+
+6️⃣ Resume Download
+
+CV zaten varsa bunu biraz daha iyi sunabilirsin:
+
+Download Resume (PDF)
+View Online
+
+
+⸻
+
+7️⃣ Uses Page (Developer nerd page 😄)
+
+Developerların sevdiği sayfa.
+
+/uses
+
+Kullandığın şeyler:
+
+Hardware
+- Mac Mini
+
+Development
+- VS Code
+- GitHub
+- Figma
+
+Tools
+- Postman
+- Chrome DevTools
+
+
+⸻
+
+8️⃣ Learning Notes
+
+Bu çok underrated bir bölüm.
+
+/notes
+
+Kısa notlar:
+
+- CSS Flexbox cheatsheet
+- Git commands
+- React hooks summary
+
+Hem sana fayda hem SEO.
+
+⸻
+
+⭐ Sana özel önerim (çok iyi gider)
+
+Senin siteye şu 5 bölüm perfect olur:
+
+Home
+About
+Projects
+Blog
+Notes
+Now
+CV
+Contact
+
+Bu yapı modern developer portfolio yapısıdır.
+
+⸻
+
+🔥 Extra fikir (çok güçlü)
+
+Şunu eklersen site çok profesyonel görünür:
+
+Build in Public
+
+Bir sayfa aç:
+
+/build-in-public
+
+Yaz:
+
+Projects I am currently building
+Startup ideas
+Experiments
+
+Mesela:
+	•	NextStep
+	•	Comic Wall
+	•	MoneyGuard
+
+⸻
+
+İstersen sana şunları da hazırlayabilirim:
+	•	⭐ Developer portfolio için en iyi site yapısı
+	•	⭐ Blog sayfan için içerik fikirleri (20 tane)
+	•	⭐ Profesyonel portfolio site sitemap
+	•	⭐ Premium görünümlü developer portfolio tasarımı
+
+İstersen ayrıca siteni FAANG recruiter seviyesinde portfolioya nasıl çeviririz onu da anlatabilirim. 🚀
