@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import cinemaniaImg from "@assets/Desktop_Home_1772658643356.png";
 import focusFrameImg from "@assets/FocusFrame_1440_1772658643357.png";
+import moneyGuardImg from "@assets/Desktop3_1772813924846.png";
 import { X } from "lucide-react";
 
 const projects = [
@@ -83,6 +84,46 @@ const projects = [
     links: {
       github: "https://github.com/kutluhangil/goit-focusframe-project",
       live: "https://kutluhangil.github.io/goit-focusframe-project/"
+    }
+  },
+  {
+    title: "MONEY GUARD",
+    subtitle: "Personal Finance Management App",
+    description: "A fully responsive financial management application developed as a collaborative team project. The application allows users to securely register, log in, manage income and expense transactions, and track total balance in real time.",
+    fullDescription: (
+      <div className="space-y-4 text-sm md:text-base">
+        <p>
+          Money Guard is a React-based financial tracking system where users can add, edit, or delete transactions, view monthly statistics via charts, and monitor real-time currency exchange rates.
+        </p>
+        <div>
+          <h4 className="font-semibold text-foreground mb-2 italic">Core Features</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+            <li>Secure Authentication (Register / Login / Logout)</li>
+            <li>Transaction CRUD operations with automatic balance sync</li>
+            <li>Statistics Dashboard with interactive charts (Chart.js)</li>
+            <li>Currency integration with Monobank API & LocalStorage cache</li>
+            <li>JWT token persistence via redux-persist</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-foreground mb-2 italic">Technical Architecture</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
+            <li>React 18 & Redux Toolkit for state management</li>
+            <li>React Router for private/public route protection</li>
+            <li>Form validation with react-hook-form & Yup</li>
+            <li>Mobile-first responsive design (Grid & Flexbox)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
+          <p className="text-muted-foreground">React, Redux Toolkit, redux-persist, React Router, react-chartjs-2, Axios, Vite.</p>
+        </div>
+      </div>
+    ),
+    image: moneyGuardImg,
+    links: {
+      github: "https://github.com/kutluhangil",
+      live: "https://github.com/kutluhangil"
     }
   }
 ];
