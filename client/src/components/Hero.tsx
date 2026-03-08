@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
+import { AnimatedText } from "./AnimatedText";
+import { MouseFollower } from "./MouseFollower";
 
 export function Hero() {
   return (
     <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-background">
+      <MouseFollower />
+      
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
         {/* subtle atmospheric noise texture */}
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full opacity-40">
@@ -23,14 +27,11 @@ export function Hero() {
           Full Stack Developer & Photographer
         </motion.p>
         
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        <AnimatedText
+          text="Building digital experiences with precision."
           className="text-5xl md:text-7xl lg:text-8xl font-display font-medium text-balance leading-tight tracking-tight mb-12"
-        >
-          Building digital <span className="italic font-light">experiences</span> with precision.
-        </motion.h1>
+          delay={0.3}
+        />
         
         <motion.div
           initial={{ opacity: 0 }}
