@@ -5,6 +5,9 @@ import { Statistics } from "@/components/Statistics";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { FeaturedPosts } from "@/components/FeaturedPosts";
+import { Timeline } from "@/components/Timeline";
+import { GitHubStats } from "@/components/GitHubStats";
+import { Newsletter } from "@/components/Newsletter";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -17,6 +20,9 @@ export default function Home() {
       <Skills />
       <Projects />
       <FeaturedPosts />
+      <Timeline />
+      <GitHubStats />
+      <Newsletter />
       <Contact />
     </main>
   );
