@@ -1,17 +1,35 @@
 import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import { Post } from "@shared/schema";
-import { api } from "@shared/routes";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
+const staticFeaturedPosts = [
+  {
+    id: 1,
+    title: "From Operations to Code: My Career Transition Story",
+    excerpt:
+      "After 8+ years in hospitality and logistics, making the decision to pivot into software development was the most deliberate choice I've made.",
+    category: "Notes",
+    date: "2025-03-15",
+  },
+  {
+    id: 2,
+    title: "Building Cinemania: Lessons from My First Team Project",
+    excerpt:
+      "Working in a team of 5 across different timezones taught me more about real-world development than any solo project.",
+    category: "Dev",
+    date: "2025-02-28",
+  },
+  {
+    id: 3,
+    title: "Why I Shoot in Black & White",
+    excerpt:
+      "Color can be a crutch. When you remove it, your eye is forced to look for light, shadow, form, and texture.",
+    category: "Photography",
+    date: "2024-12-05",
+  },
+];
+
 export function FeaturedPosts() {
-  const { data: posts } = useQuery<Post[]>({
-    queryKey: [api.posts.list.path]
-  });
-
-  const featured = posts?.slice(0, 3) || [];
-
   return (
     <section className="py-32 bg-background border-t border-border/40">
       <div className="max-w-6xl mx-auto px-6">
@@ -34,7 +52,7 @@ export function FeaturedPosts() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          {featured.map((post, idx) => (
+          {staticFeaturedPosts.map((post, idx) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
@@ -48,9 +66,9 @@ export function FeaturedPosts() {
                   {post.category}
                 </span>
                 <span className="text-[10px] text-muted-foreground">
-                  {new Date(post.createdAt!).toLocaleDateString("en-US", { 
-                    month: "short", 
-                    day: "numeric" 
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
                   })}
                 </span>
               </div>

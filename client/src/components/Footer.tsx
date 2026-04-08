@@ -7,8 +7,28 @@ export function Footer() {
         </p>
         
         <div className="flex items-center gap-6">
-          <a href="https://linkedin.com" target="_blank" className="text-sm font-light hover:text-background transition-colors">LinkedIn</a>
-          <a href="https://github.com" target="_blank" className="text-sm font-light hover:text-background transition-colors">GitHub</a>
+          <a
+            href="https://linkedin.com/in/kutluhangil"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-light hover:text-background transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/kutluhangil"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-light hover:text-background transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="mailto:kutluhangul@gmail.com"
+            className="text-sm font-light hover:text-background transition-colors"
+          >
+            Email
+          </a>
         </div>
       </div>
     </footer>

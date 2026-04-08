@@ -5,10 +5,15 @@ import focusFrameImg from "@assets/FocusFrame_1440_1772658643357.png";
 import moneyGuardImg from "@assets/Desktop3_1772813924846.png";
 import { X, ExternalLink, Github } from "lucide-react";
 
+type FilterKey = "All" | "HTML/CSS" | "React" | "Node.js";
+
+const filters: FilterKey[] = ["All", "HTML/CSS", "React", "Node.js"];
+
 const projects = [
   {
     title: "CINEMANIA",
     subtitle: "Digital Movie Discovery Platform",
+    tags: ["HTML/CSS"] as FilterKey[],
     description: "A fully responsive, multi-page web application developed as a collaborative group project within the GoIT Full Stack Developer Program. The platform allows users to discover trending movies, explore upcoming releases, manage a personal movie library, and view detailed movie information using real-time data from The Movie Database (TMDB) API.",
     fullDescription: (
       <div className="space-y-6 text-sm md:text-base">
@@ -56,6 +61,7 @@ const projects = [
   {
     title: "FOCUS FRAME",
     subtitle: "Photography School Landing Page",
+    tags: ["HTML/CSS"] as FilterKey[],
     description: "A single-page, fully responsive photography school website developed as part of the GoIT Full Stack Developer course. The page includes sections for courses, mentors, reviews, contact information, and a professional footer.",
     fullDescription: (
       <div className="space-y-6 text-sm md:text-base">
@@ -102,6 +108,7 @@ const projects = [
   {
     title: "MONEY GUARD",
     subtitle: "Personal Finance Management App",
+    tags: ["React", "Node.js"] as FilterKey[],
     description: "A fully responsive financial management application developed as a collaborative team project. The application allows users to securely register, log in, manage income and expense transactions, and track total balance in real time.",
     fullDescription: (
       <div className="space-y-6 text-sm md:text-base">
@@ -150,51 +157,83 @@ const projects = [
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [activeFilter, setActiveFilter] = useState<FilterKey>("All");
+
+  const filtered = activeFilter === "All"
+    ? projects
+    : projects.filter(p => p.tags.includes(activeFilter));
 
   return (
     <section id="projects" className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-20">
+        <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-display mb-4">Project Case Studies</h2>
           <p className="text-muted-foreground max-w-md font-light">
             Detailed breakdowns of my technical projects, featuring challenges, solutions, and architectural choices.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group cursor-pointer"
-              onClick={() => setSelectedProject(project)}
-              data-testid={`card-project-${index}`}
+        {/* Filter bar */}
+        <div className="flex flex-wrap gap-3 mb-16">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-4 py-2 text-[10px] uppercase tracking-widest border transition-all duration-300 ${
+                activeFilter === filter
+                  ? "bg-foreground text-background border-foreground"
+                  : "border-border/40 text-muted-foreground hover:border-foreground/40 hover:text-foreground"
+              }`}
             >
-              <div className="aspect-video overflow-hidden bg-muted mb-8 relative border border-border/40">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-              </div>
-              <div>
-                <span className="text-[10px] tracking-widest uppercase text-muted-foreground mb-2 block">{project.subtitle}</span>
-                <h3 className="text-2xl font-display mb-4">{project.title}</h3>
-                <p className="text-muted-foreground font-light mb-8 leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex gap-6">
-                  <span className="text-xs uppercase tracking-widest border-b border-foreground/20 group-hover:border-foreground transition-colors pb-1 flex items-center gap-2">
-                    Case Study Details
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+              {filter}
+            </button>
           ))}
         </div>
+
+        <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((project, index) => (
+              <motion.div
+                key={project.title}
+                layout
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group cursor-pointer"
+                onClick={() => setSelectedProject(project)}
+                data-testid={`card-project-${index}`}
+              >
+                <div className="aspect-video overflow-hidden bg-muted mb-8 relative border border-border/40">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[10px] tracking-widest uppercase text-muted-foreground">{project.subtitle}</span>
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-[8px] uppercase tracking-widest px-2 py-0.5 border border-border/40 bg-muted/30">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="text-2xl font-display mb-4">{project.title}</h3>
+                  <p className="text-muted-foreground font-light mb-8 leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
+                  <div className="flex gap-6">
+                    <span className="text-xs uppercase tracking-widest border-b border-foreground/20 group-hover:border-foreground transition-colors pb-1 flex items-center gap-2">
+                      Case Study Details
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       <AnimatePresence>
@@ -236,10 +275,10 @@ export function Projects() {
                     {selectedProject.fullDescription}
                   </div>
                   <div className="flex flex-wrap gap-8">
-                    <a href={selectedProject.links.github} target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 flex items-center gap-2">
+                    <a href={selectedProject.links.github} target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 flex items-center gap-2">
                       <Github className="w-3 h-3" /> GitHub Repo
                     </a>
-                    <a href={selectedProject.links.live} target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 flex items-center gap-2">
+                    <a href={selectedProject.links.live} target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 flex items-center gap-2">
                       <ExternalLink className="w-3 h-3" /> Live Demo
                     </a>
                   </div>

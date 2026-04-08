@@ -1,4 +1,3 @@
-import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Statistics } from "@/components/Statistics";
@@ -7,9 +6,9 @@ import { Projects } from "@/components/Projects";
 import { FeaturedPosts } from "@/components/FeaturedPosts";
 import { Timeline } from "@/components/Timeline";
 import { GitHubStats } from "@/components/GitHubStats";
+import { Testimonials } from "@/components/Testimonials";
 import { Newsletter } from "@/components/Newsletter";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -22,6 +21,7 @@ export default function Home() {
       <FeaturedPosts />
       <Timeline />
       <GitHubStats />
+      <Testimonials />
       <Newsletter />
       <Contact />
     </main>

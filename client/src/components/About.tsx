@@ -59,10 +59,10 @@ export function About() {
             </div>
             
             <div className="mt-12 flex flex-wrap gap-8">
-              <a href="https://linkedin.com" target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">LinkedIn</a>
-              <a href="https://github.com" target="_blank" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">GitHub</a>
-              <a href="#" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">View Online Resume</a>
-              <a href="#" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">Download PDF</a>
+              <a href="https://linkedin.com/in/kutluhangil" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">LinkedIn</a>
+              <a href="https://github.com/kutluhangil" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">GitHub</a>
+              <a href="https://linkedin.com/in/kutluhangil" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">View Online Resume</a>
+              <a href="https://linkedin.com/in/kutluhangil" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">Download PDF</a>
             </div>
           </motion.div>
         </div>

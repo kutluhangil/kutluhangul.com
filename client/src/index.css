@@ -83,6 +83,13 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
   }
+
+  /* Hide native cursor for custom cursor — only on non-touch devices */
+  @media (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+  }
 }
 
 @layer utilities {
@@ -97,3 +104,4 @@
            placeholder:text-muted-foreground transition-colors duration-300 w-full;
   }
 }
+

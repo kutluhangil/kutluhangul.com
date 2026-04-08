@@ -29,9 +29,9 @@ export function Contact() {
           transition={{ duration: 1 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-6xl font-display mb-6">Let's Create Together</h2>
+          <h2 className="text-4xl md:text-6xl font-display mb-6">Let's Work Together</h2>
           <p className="text-background/60 font-light max-w-lg mx-auto">
-            Available for commissions, exhibitions, and print inquiries worldwide.
+            Open to full-time roles, freelance projects, and collaborations. Let's build something great.
           </p>
         </motion.div>
 
