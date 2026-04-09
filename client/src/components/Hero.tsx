@@ -55,13 +55,13 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#projects"
+            href="/#projects"
             className="inline-block border border-foreground bg-foreground text-background px-8 py-4 text-xs uppercase tracking-widest hover:bg-transparent hover:text-foreground transition-all duration-500 ease-out"
           >
             View Projects
           </a>
           <a
-            href="#gallery"
+            href="/#gallery"
             className="inline-block border border-foreground px-8 py-4 text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all duration-500 ease-out"
           >
             Photography

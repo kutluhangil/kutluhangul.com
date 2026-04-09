@@ -13,7 +13,7 @@ export function Contact() {
     // Statik Vercel deployment'ı için backend (Express) gerektirmeyecek mailto çözümü:
     const subject = encodeURIComponent(`Portfolio İletişim: ${data.name}`);
     const body = encodeURIComponent(`İsim: ${data.name}\nE-posta: ${data.email}\n\nMesaj:\n${data.message}`);
-    window.location.href = `mailto:kutluhangul@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:kutluhangul@windowslive.com?subject=${subject}&body=${body}`;
     reset();
   };
 

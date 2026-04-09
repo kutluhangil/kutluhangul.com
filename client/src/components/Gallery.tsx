@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePhotos } from "@/hooks/use-photos";
-import { Loader2, X } from "lucide-react";
+import { X } from "lucide-react";
 
 // Fallback high-end photography if API is empty
 const FALLBACK_PHOTOS = [
@@ -44,18 +43,9 @@ const FALLBACK_PHOTOS = [
 ];
 
 export function Gallery() {
-  const { data: photos, isLoading, error } = usePhotos();
   const [selectedPhoto, setSelectedPhoto] = useState<typeof FALLBACK_PHOTOS[0] | null>(null);
 
-  const displayPhotos = photos && photos.length > 0 ? photos : FALLBACK_PHOTOS;
-
-  if (error) {
-    return (
-      <section className="py-24 text-center">
-        <p className="text-muted-foreground">Unable to load gallery.</p>
-      </section>
-    );
-  }
+  const displayPhotos = FALLBACK_PHOTOS;
 
   return (
     <section id="gallery" className="py-32 bg-background border-t border-border/40">
@@ -69,13 +59,8 @@ export function Gallery() {
           </div>
         </div>
 
-        {isLoading ? (
-          <div className="h-[40vh] flex items-center justify-center">
-            <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
-            {displayPhotos.map((photo, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
+          {displayPhotos.map((photo, index) => (
               <motion.div
                 key={photo.id}
                 initial={{ opacity: 0, y: 30 }}

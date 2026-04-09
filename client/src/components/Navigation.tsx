@@ -6,12 +6,12 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "/", label: "Home", isRoute: true },
-  { href: "#about", label: "About", isRoute: false },
-  { href: "#projects", label: "Projects", isRoute: false },
+  { href: "/#about", label: "About", isRoute: false },
+  { href: "/#projects", label: "Projects", isRoute: false },
   { href: "/blog", label: "Blog & Notes", isRoute: true },
   { href: "/now", label: "Now", isRoute: true },
   { href: "/uses", label: "Uses", isRoute: true },
-  { href: "#contact", label: "Contact", isRoute: false },
+  { href: "/#contact", label: "Contact", isRoute: false },
 ];
 
 export function Navigation() {
