@@ -2,27 +2,39 @@ import { motion } from "framer-motion";
 
 const timeline = [
   {
-    year: "2024",
-    title: "GoIT Full Stack Developer",
-    description: "Transitioning to software development with intensive 8+ month program covering modern web technologies.",
+    year: "2025 - Present",
+    title: "GoIT Full Stack Developer Program",
+    description: "Intensive training in modern web technologies, building scalable apps with React, Node.js, and clean architecture.",
     type: "education"
   },
   {
-    year: "2022-2024",
+    year: "2022 - 2024",
     title: "Senior Selling Partner Support Associate",
-    description: "Amazon Logistics. Led technical support operations, managed complex customer issues, and optimized team workflows.",
+    description: "Amazon (Remote). Delivered multi-channel technical support and resolved complex catalog and backend issues across EU marketplaces.",
     type: "work"
   },
   {
-    year: "2020-2022",
-    title: "Operations Manager",
-    description: "Hospitality & Logistics. Supervised 20+ team members across multiple departments in the United States.",
+    year: "2021 - 2022",
+    title: "Guest Service Agent",
+    description: "Crowne Plaza Istanbul. Managed front-desk operations, ensuring smooth check-ins and professional guest experiences.",
     type: "work"
   },
   {
-    year: "2016-2020",
-    title: "International Professional Experience",
-    description: "Developed strong foundation in customer relations, problem solving, and cross-cultural communication across various roles.",
+    year: "2019 - 2021",
+    title: "Guest Service Agent",
+    description: "Radisson Blu Hotel & Spa. Delivered premium front-desk operations, handled reservations and secure transactions.",
+    type: "work"
+  },
+  {
+    year: "2017 - 2019",
+    title: "Master's Degree in Tourism",
+    description: "Atilim University. Master’s Degree in Tourism and Travel Services Management.",
+    type: "education"
+  },
+  {
+    year: "2013 - 2016",
+    title: "Work & Travel Program (USA)",
+    description: "Park City, Utah. Held various roles including Floor Supervisor & Inspector. Managed inventory, operations, and cultural exchange.",
     type: "work"
   }
 ];

@@ -71,7 +71,11 @@ export function Navigation() {
         className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b"
       >
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-          <Link href="/" className="text-xl font-display font-semibold tracking-widest uppercase hover:opacity-60 transition-opacity">
+          <Link 
+            href="/" 
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-xl font-display font-semibold tracking-widest uppercase hover:opacity-60 transition-opacity"
+          >
             Kutluhan Gül
           </Link>
 
@@ -82,6 +86,11 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => {
+                    if (link.href === "/") {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
                   className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors"
                 >
                   {link.label}
