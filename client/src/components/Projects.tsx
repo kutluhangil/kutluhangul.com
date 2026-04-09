@@ -53,6 +53,7 @@ const projects = [
       </div>
     ),
     image: cinemaniaImg,
+    modalImage: undefined,
     links: {
       github: "https://github.com/kutluhangil",
       live: "https://january-javascript-project.github.io/cinemania/"
@@ -100,6 +101,7 @@ const projects = [
       </div>
     ),
     image: focusFrameImg,
+    modalImage: "/images/projects/focusframe.png",
     links: {
       github: "https://github.com/kutluhangil/goit-focusframe-project",
       live: "https://kutluhangil.github.io/goit-focusframe-project/"
@@ -148,12 +150,51 @@ const projects = [
       </div>
     ),
     image: moneyGuardImg,
+    modalImage: undefined,
     links: {
       github: "https://github.com/kutluhangil",
       live: "https://github.com/kutluhangil"
     }
   }
 ];
+
+const ScrollableImage = ({ src, alt }: { src: string; alt: string }) => {
+  const [bgPos, setBgPos] = useState("0%");
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { top, height } = e.currentTarget.getBoundingClientRect();
+    const yPos = e.clientY - top;
+    const percentage = Math.max(0, Math.min(100, (yPos / height) * 100));
+    setBgPos(`${percentage}%`);
+  };
+
+  const handleMouseLeave = () => {
+    setBgPos("0%");
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    const { top, height } = e.currentTarget.getBoundingClientRect();
+    const yPos = e.touches[0].clientY - top;
+    const percentage = Math.max(0, Math.min(100, (yPos / height) * 100));
+    setBgPos(`${percentage}%`);
+  };
+
+  return (
+    <div 
+      className="w-full h-full bg-top bg-no-repeat transition-[background-position] duration-75 ease-linear cursor-ns-resize grayscale hover:grayscale-0"
+      style={{ 
+        backgroundImage: `url(${src})`,
+        backgroundPosition: `center ${bgPos}`,
+        backgroundSize: "100% auto"
+      }}
+      onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+      onMouseLeave={handleMouseLeave}
+      onTouchEnd={handleMouseLeave}
+      title={alt}
+    />
+  );
+};
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
@@ -262,11 +303,15 @@ export function Projects() {
               
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="aspect-video lg:aspect-square overflow-hidden bg-muted">
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-full object-cover grayscale"
-                  />
+                  {selectedProject.modalImage ? (
+                    <ScrollableImage src={selectedProject.modalImage} alt={selectedProject.title} />
+                  ) : (
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className="w-full h-full object-cover grayscale"
+                    />
+                  )}
                 </div>
                 <div className="p-8 md:p-12 flex flex-col justify-center">
                   <span className="text-[10px] tracking-widest uppercase text-muted-foreground mb-4 block">{selectedProject.subtitle}</span>
