@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import cinemaniaImg from "@assets/Desktop_Home_1772658643356.png";
 import focusFrameImg from "@assets/FocusFrame_1440_1772658643357.png";
@@ -16,44 +16,71 @@ const projects = [
     tags: ["HTML/CSS"] as FilterKey[],
     description: "A fully responsive, multi-page web application developed as a collaborative group project within the GoIT Full Stack Developer Program. The platform allows users to discover trending movies, explore upcoming releases, manage a personal movie library, and view detailed movie information using real-time data from The Movie Database (TMDB) API.",
     fullDescription: (
-      <div className="space-y-6 text-sm md:text-base">
+      <div className="space-y-8 text-sm md:text-base">
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Project Overview</h4>
-          <p className="text-muted-foreground font-light leading-relaxed">
-            Cinemania simulates a real-world movie discovery platform. Users can browse trending films, search movies by keyword or year, explore upcoming releases, and manage a personalized movie library. The application is designed with a Mobile-First approach and follows modern frontend best practices.
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">📖</span> About the Project</h4>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            Cinemania simulates a real-world movie discovery platform. Users can browse trending films, search movies by keyword or year, explore upcoming releases, and manage a personalized movie library.
+          </p>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            The application is designed with a Mobile-First approach and follows modern frontend best practices including semantic HTML, modular CSS architecture, and asynchronous JavaScript logic.
           </p>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Core Features (MVP)</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light">
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">✨</span> Core Features (MVP)</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light mb-4">
             <li>Mobile-first responsive layout (320px / 768px / 1280px)</li>
             <li>Theme switcher (Dark / Light) with localStorage persistence</li>
             <li>Hero section with daily trending movie</li>
             <li>Movie detail modal with trailer support</li>
             <li>My Library with add/remove logic (localStorage)</li>
+            <li>Footer with team modal (GoIT Students)</li>
           </ul>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Challenges & Lessons</h4>
-          <p className="text-muted-foreground font-light leading-relaxed">
-            Managing asynchronous data fetching from TMDB and ensuring a seamless UI across different viewports were the primary challenges. I learned the importance of modular CSS architecture and efficient state management for a multi-page application.
-          </p>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">🚀</span> Additional Features</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light mb-4">
+            <li>Weekly Trends & Upcoming This Month sections</li>
+            <li>Catalog search with year filter</li>
+            <li>Server-side pagination & Load more functionality</li>
+            <li>Scroll-to-top button & Global loader (spinner) for async requests</li>
+          </ul>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">⚙️</span> Technical Requirements</h4>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground font-light">
+            <li><strong>Semantics:</strong> Semantic HTML5 & Modern-normalize integrated.</li>
+            <li><strong>Performance:</strong> Optimized retina-ready images, PageSpeed score ≥ 80%.</li>
+            <li><strong>Assets:</strong> Fonts via @font-face, all static assets under src/images.</li>
+            <li><strong>Validation:</strong> Passed W3C HTML & CSS validation, no console errors.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">🛠️</span> Technologies Used</h4>
           <div className="flex flex-wrap gap-2 mt-2">
-            {["HTML5", "CSS3", "Vanilla JS", "Vite", "TMDB API", "Git"].map(tech => (
-              <span key={tech} className="px-2 py-1 bg-muted/50 text-[10px] uppercase tracking-wider border border-border/40">{tech}</span>
+            {["HTML5", "CSS3 (Flexbox & Grid)", "Vanilla JS (ES6+)", "Vite", "Git & GitHub", "TMDB API"].map(tech => (
+              <span key={tech} className="px-3 py-1 bg-muted/40 text-[10px] uppercase tracking-widest border border-border/40">{tech}</span>
             ))}
           </div>
+        </section>
+        
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">👥</span> Team Members & Responsibilities</h4>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            This project was developed collaboratively as part of the GoIT group project under the leadership of Team Lead Çiğdem Ergal and Scrum Master Halenur Gürel.
+          </p>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            As a Developer in the team, my primary responsibility was building the <strong>Footer & Team Modal</strong>, ensuring a responsive design and seamless integration with the rest of the application.
+          </p>
         </section>
       </div>
     ),
     image: cinemaniaImg,
-    modalImage: undefined,
+    modalImage: "/images/projects/cinemania.jpg",
     links: {
       github: "https://github.com/kutluhangil",
       live: "https://january-javascript-project.github.io/cinemania/"
@@ -134,44 +161,67 @@ const projects = [
     tags: ["React", "Node.js"] as FilterKey[],
     description: "A fully responsive financial management application developed as a collaborative team project. The application allows users to securely register, log in, manage income and expense transactions, and track total balance in real time.",
     fullDescription: (
-      <div className="space-y-6 text-sm md:text-base">
+      <div className="space-y-8 text-sm md:text-base">
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Project Overview</h4>
-          <p className="text-muted-foreground font-light leading-relaxed">
-            Money Guard is a React-based financial tracking system. Users can securely manage their finances, track transactions, and visualize their spending habits through interactive statistics.
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">📖</span> About the Project</h4>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            Money Guard is a React-based financial tracking system where users can securely manage their finances, track transactions, and visualize their spending habits through interactive statistics.
+          </p>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            The application follows a Mobile-First design approach and implements a scalable Redux architecture for global state management.
           </p>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Core Features</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light">
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">✨</span> Core Features</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light mb-4">
             <li>Secure Authentication (Register / Login / Logout)</li>
-            <li>Transaction CRUD operations with automatic balance sync</li>
-            <li>Statistics Dashboard with interactive charts (Chart.js)</li>
-            <li>Currency integration with Monobank API & LocalStorage cache</li>
             <li>JWT token persistence via redux-persist</li>
+            <li>Transaction CRUD (Create / Read / Update / Delete)</li>
+            <li>Responsive Transactions Table & Mobile Card Layout</li>
+            <li>Floating "+" Add Transaction Button with Modal Forms</li>
+            <li>Automatic balance synchronization & Toast-based error handling</li>
+            <li>Statistics Dashboard (Chart.js) & Currency integration (Monobank API)</li>
           </ul>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Challenges & Lessons</h4>
-          <p className="text-muted-foreground font-light leading-relaxed">
-            Implementing global state management with Redux Toolkit and ensuring data persistence were key challenges. I learned how to handle complex asynchronous operations and synchronized state across different components.
-          </p>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">⚙️</span> Technical Architecture</h4>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground font-light">
+            <li><strong>State & Storage:</strong> Redux Toolkit for global state, redux-persist for secure token storage.</li>
+            <li><strong>Routing & API:</strong> React Router for private/public routing, Async Thunks for backend communication.</li>
+            <li><strong>Layout:</strong> Mobile-first responsive CSS (Grid & Flexbox).</li>
+            <li><strong>Architecture:</strong> Component-based modular structure with clear separation of UI and business logic.</li>
+          </ul>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">🛠️</span> Technologies Used</h4>
           <div className="flex flex-wrap gap-2 mt-2">
-            {["React", "Redux Toolkit", "Chart.js", "Axios", "Vite", "Yup"].map(tech => (
-              <span key={tech} className="px-2 py-1 bg-muted/50 text-[10px] uppercase tracking-wider border border-border/40">{tech}</span>
+            {["React 18", "Redux Toolkit", "React Router", "Yup", "react-hook-form", "Chart.js", "Axios", "Vite", "ESLint"].map(tech => (
+              <span key={tech} className="px-3 py-1 bg-muted/40 text-[10px] uppercase tracking-widest border border-border/40">{tech}</span>
             ))}
           </div>
+        </section>
+
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">👥</span> Team Responsibilities & Workflow</h4>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            In this collaborative project, my primary responsibility was the <strong>Transaction CRUD & Modals</strong> logic. I developed the floating Add Transaction button, ModalAddTransaction, AddTransactionForm (using react-hook-form + Yup), and the auto balance synchronization system.
+          </p>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            We implemented a parallel development workflow stringently separated by responsibility layers and relied on unified error handling across the team.
+          </p>
         </section>
       </div>
     ),
     image: moneyGuardImg,
-    modalImage: undefined,
+    modalImage: [
+      "/images/projects/moneyguard/1.jpg", 
+      "/images/projects/moneyguard/2.jpg", 
+      "/images/projects/moneyguard/3.jpg", 
+      "/images/projects/moneyguard/4.jpg"
+    ],
     links: {
       github: "https://github.com/kutluhangil",
       live: "https://github.com/kutluhangil"
@@ -179,26 +229,63 @@ const projects = [
   }
 ];
 
-const ScrollableImage = ({ src, alt }: { src: string; alt: string }) => {
+const ScrollableImage = ({ src, alt }: { src: string | string[]; alt: string }) => {
   const [bgPos, setBgPos] = useState("0%");
+  
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [translateY, setTranslateY] = useState(0);
+
+  const calculateScroll = (yPos: number, containerHeight: number) => {
+    const percentage = Math.max(0, Math.min(100, (yPos / containerHeight) * 100));
+    setBgPos(`${percentage}%`);
+
+    if (containerRef.current && contentRef.current) {
+      const scrollableDistance = contentRef.current.scrollHeight - containerRef.current.clientHeight;
+      if (scrollableDistance > 0) {
+        setTranslateY((percentage / 100) * scrollableDistance);
+      }
+    }
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { top, height } = e.currentTarget.getBoundingClientRect();
-    const yPos = e.clientY - top;
-    const percentage = Math.max(0, Math.min(100, (yPos / height) * 100));
-    setBgPos(`${percentage}%`);
-  };
-
-  const handleMouseLeave = () => {
-    setBgPos("0%");
+    calculateScroll(e.clientY - top, height);
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     const { top, height } = e.currentTarget.getBoundingClientRect();
-    const yPos = e.touches[0].clientY - top;
-    const percentage = Math.max(0, Math.min(100, (yPos / height) * 100));
-    setBgPos(`${percentage}%`);
+    calculateScroll(e.touches[0].clientY - top, height);
   };
+
+  const handleMouseLeave = () => {
+    setBgPos("0%");
+    setTranslateY(0);
+  };
+
+  if (Array.isArray(src)) {
+    return (
+      <div 
+        ref={containerRef}
+        className="w-full h-full overflow-hidden cursor-ns-resize grayscale hover:grayscale-0 transition-all duration-75 relative bg-muted"
+        onMouseMove={handleMouseMove}
+        onTouchMove={handleTouchMove}
+        onMouseLeave={handleMouseLeave}
+        onTouchEnd={handleMouseLeave}
+        title={alt}
+      >
+        <div 
+          ref={contentRef}
+          className="w-full flex flex-col transition-transform duration-75 ease-linear"
+          style={{ transform: `translateY(-${translateY}px)` }}
+        >
+          {src.map((imgSrc, i) => (
+            <img key={i} src={imgSrc} alt={`${alt} ${i}`} className="w-full h-auto block" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div 
