@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export function Hero() {
   return (
@@ -59,12 +60,12 @@ export function Hero() {
           >
             View Projects
           </a>
-          <a
+          <Link
             href="/blog"
             className="inline-block border border-foreground px-8 py-4 text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all duration-500 ease-out"
           >
             Blog & Notes
-          </a>
+          </Link>
         </motion.div>
       </div>
 
