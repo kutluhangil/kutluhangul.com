@@ -3,20 +3,18 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertMessageSchema, type InsertMessage } from "@shared/schema";
-import { useCreateMessage } from "@/hooks/use-messages";
-import { Loader2 } from "lucide-react";
 
 export function Contact() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<InsertMessage>({
     resolver: zodResolver(insertMessageSchema),
   });
   
-  const { mutate: sendMessage, isPending } = useCreateMessage();
-
   const onSubmit = (data: InsertMessage) => {
-    sendMessage(data, {
-      onSuccess: () => reset(),
-    });
+    // Statik Vercel deployment'ı için backend (Express) gerektirmeyecek mailto çözümü:
+    const subject = encodeURIComponent(`Portfolio İletişim: ${data.name}`);
+    const body = encodeURIComponent(`İsim: ${data.name}\nE-posta: ${data.email}\n\nMesaj:\n${data.message}`);
+    window.location.href = `mailto:kutluhangul@gmail.com?subject=${subject}&body=${body}`;
+    reset();
   };
 
   return (
@@ -50,7 +48,7 @@ export function Contact() {
                 type="text"
                 placeholder="Name"
                 className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 py-4 w-full focus:outline-none focus:border-background text-background placeholder:text-background/40 transition-colors"
-                disabled={isPending}
+                disabled={false}
               />
               {errors.name && (
                 <span className="absolute -bottom-6 left-0 text-xs text-red-400">{errors.name.message}</span>
@@ -63,7 +61,7 @@ export function Contact() {
                 type="email"
                 placeholder="Email Address"
                 className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 py-4 w-full focus:outline-none focus:border-background text-background placeholder:text-background/40 transition-colors"
-                disabled={isPending}
+                disabled={false}
               />
               {errors.email && (
                 <span className="absolute -bottom-6 left-0 text-xs text-red-400">{errors.email.message}</span>
@@ -77,7 +75,7 @@ export function Contact() {
               rows={4}
               placeholder="Your inquiry..."
               className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 py-4 w-full focus:outline-none focus:border-background text-background placeholder:text-background/40 transition-colors resize-none"
-              disabled={isPending}
+              disabled={false}
             />
             {errors.message && (
               <span className="absolute -bottom-6 left-0 text-xs text-red-400">{errors.message.message}</span>
@@ -87,17 +85,10 @@ export function Contact() {
           <div className="text-center pt-8">
             <button
               type="submit"
-              disabled={isPending}
+              disabled={false}
               className="border border-background text-background hover:bg-background hover:text-foreground px-12 py-4 text-xs tracking-widest uppercase transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-3"
             >
-              {isPending ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Sending...
-                </>
-              ) : (
-                "Send Message"
-              )}
+              Send Message
             </button>
           </div>
         </motion.form>
