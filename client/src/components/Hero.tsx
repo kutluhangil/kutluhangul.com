@@ -36,9 +36,8 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8"
         >
-          Full Stack Developer & Photographer
+          Full Stack Developer
         </motion.p>
-        
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,10 +60,10 @@ export function Hero() {
             View Projects
           </a>
           <a
-            href="/#gallery"
+            href="/blog"
             className="inline-block border border-foreground px-8 py-4 text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all duration-500 ease-out"
           >
-            Photography
+            Blog & Notes
           </a>
         </motion.div>
       </div>
