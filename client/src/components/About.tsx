@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import profileImg from "@assets/0B2A8300a_-_Copy_(2)ss_1772740463085.jpg";
 
 export function About() {
   const skills = [
@@ -20,9 +19,9 @@ export function About() {
             className="aspect-square w-full max-w-md mx-auto overflow-hidden relative group rounded-2xl"
           >
             <img
-              src={profileImg}
+              src="/images/profile-avatar.jpg"
               alt="Kutluhan Gül"
-              className="w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/5 mix-blend-overlay pointer-events-none" />
           </motion.div>
