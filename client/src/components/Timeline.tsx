@@ -69,10 +69,10 @@ export function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
-                className={`md:grid md:grid-cols-2 md:gap-8 ${idx % 2 !== 0 ? "md:text-right" : ""}`}
+                className={`relative md:grid md:grid-cols-2 md:gap-8 ${idx % 2 !== 0 ? "md:text-right" : ""}`}
               >
                 {/* Dot on timeline */}
-                <div className="absolute left-3 md:left-1/2 top-2 w-6 h-6 -translate-x-2.5 md:-translate-x-3 bg-background border-2 border-foreground rounded-full z-10" />
+                <div className="absolute left-6 md:left-1/2 top-1.5 w-4 h-4 md:w-5 md:h-5 -translate-x-1/2 bg-background border-2 border-foreground rounded-full z-10" />
 
                 {/* Content */}
                 <div className={`ml-16 md:ml-0 ${idx % 2 !== 0 ? "md:col-start-1" : "md:col-start-2"}`}>
