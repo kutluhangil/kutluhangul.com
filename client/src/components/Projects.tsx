@@ -65,38 +65,59 @@ const projects = [
     tags: ["HTML/CSS"] as FilterKey[],
     description: "A single-page, fully responsive photography school website developed as part of the GoIT Full Stack Developer course. The page includes sections for courses, mentors, reviews, contact information, and a professional footer.",
     fullDescription: (
-      <div className="space-y-6 text-sm md:text-base">
+      <div className="space-y-8 text-sm md:text-base">
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Project Overview</h4>
-          <p className="text-muted-foreground font-light leading-relaxed">
-            Focus.Frame simulates a real landing page experience for a photography school. It includes a hero section, course cards, mentor profiles, student reviews, and a sign-up form.
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">📖</span> About the Project</h4>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            Focus.Frame simulates a real landing page experience. It includes a hero section introducing the school, course cards (Basics, Landscape, Portrait), mentor profiles, student reviews, a sign-up form, and a professional footer with social links.
           </p>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Technical Specifications</h4>
-          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light">
-            <li>Mobile-first responsive layout (375px / 768px / 1280px)</li>
-            <li>Image optimization for Retina displays</li>
-            <li>SVG icons via sprite & Validated HTML5/CSS3 semantics</li>
-            <li>Dotted grid background applied as a PNG image for a technical look</li>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">✨</span> Core Features and Requirements</h4>
+          <p className="font-medium text-foreground mb-2">Layout and Responsiveness 📱💻🖥️</p>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light mb-4">
+            <li>Mobile: Responsive from 375px</li>
+            <li>Tablet: Responsive from 768px</li>
+            <li>Desktop: Responsive from 1280px (optimization for 1440px)</li>
           </ul>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Challenges & Lessons</h4>
-          <p className="text-muted-foreground font-light leading-relaxed">
-            Maintaining pixel-perfect alignment with Figma mockups was crucial. I strengthened my skills in Flexbox and CSS Grid while ensuring consistent spacing and typography across all breakpoints.
-          </p>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">⚙️</span> Technical Specifications</h4>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground font-light">
+            <li><strong>Validation:</strong> Must pass HTML/CSS validation via W3C validators.</li>
+            <li><strong>Semantics:</strong> Must comply with HTML5 semantic standards.</li>
+            <li><strong>Image Optimization:</strong> Optimized dimensions for vector and raster images, support for Retina displays, and optimized loading.</li>
+            <li><strong>SVG Icons:</strong> All icons must be linked via a sprite.</li>
+            <li><strong>Styling:</strong> Dotted grid background applied as a PNG image, fonts externally linked, Flexbox & CSS Grid layout.</li>
+          </ul>
         </section>
 
         <section>
-          <h4 className="font-semibold text-foreground mb-2 italic">Technologies Used</h4>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">🚧</span> Challenges</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light">
+            <li>Maintaining pixel-perfect alignment with Figma mockups</li>
+            <li>Ensuring responsive design at all breakpoints</li>
+            <li>Keeping fonts, spacing, and icons consistent</li>
+            <li>Team coordination and resolving merge conflicts</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">🛠️</span> Technologies Used</h4>
           <div className="flex flex-wrap gap-2 mt-2">
-            {["HTML5", "CSS3", "Flexbox", "CSS Grid", "Figma", "Git"].map(tech => (
-              <span key={tech} className="px-2 py-1 bg-muted/50 text-[10px] uppercase tracking-wider border border-border/40">{tech}</span>
+            {["HTML5", "CSS3", "Flexbox & CSS Grid", "Figma", "Git & GitHub"].map(tech => (
+              <span key={tech} className="px-3 py-1 bg-muted/40 text-[10px] uppercase tracking-widest border border-border/40">{tech}</span>
             ))}
           </div>
+        </section>
+        
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">👥</span> Team Members</h4>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            This project was developed collaboratively as part of the GoIT group project. I was specifically responsible for developing the complete Footer section. We collaborated using GitHub branches, Pull Requests, and Trello for task management.
+          </p>
         </section>
       </div>
     ),
@@ -291,29 +312,28 @@ export function Projects() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-5xl bg-background border border-border/40 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="relative w-full max-w-5xl bg-background border border-border/40 shadow-2xl overflow-hidden flex flex-col lg:flex-row max-h-[90vh]"
             >
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 z-10 p-2 hover:bg-muted transition-colors rounded-full"
+                className="absolute top-6 right-6 z-10 p-2 bg-background/50 backdrop-blur hover:bg-muted transition-colors rounded-full"
                 data-testid="button-close-modal"
               >
                 <X className="w-6 h-6" />
               </button>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="aspect-video lg:aspect-square overflow-hidden bg-muted">
-                  {selectedProject.modalImage ? (
-                    <ScrollableImage src={selectedProject.modalImage} alt={selectedProject.title} />
-                  ) : (
-                    <img
-                      src={selectedProject.image}
-                      alt={selectedProject.title}
-                      className="w-full h-full object-cover grayscale"
-                    />
-                  )}
-                </div>
-                <div className="p-8 md:p-12 flex flex-col justify-center">
+              <div className="flex-1 lg:w-1/2 h-[40vh] lg:h-auto overflow-hidden bg-muted border-b lg:border-b-0 lg:border-r border-border/40 shrink-0">
+                {selectedProject.modalImage ? (
+                  <ScrollableImage src={selectedProject.modalImage} alt={selectedProject.title} />
+                ) : (
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-cover grayscale"
+                  />
+                )}
+              </div>
+              <div className="flex-1 lg:w-1/2 p-8 md:p-12 overflow-y-auto lg:max-h-[90vh]">
                   <span className="text-[10px] tracking-widest uppercase text-muted-foreground mb-4 block">{selectedProject.subtitle}</span>
                   <h3 className="text-3xl md:text-5xl font-display mb-8">{selectedProject.title}</h3>
                   <div className="space-y-6 text-foreground/70 font-light leading-relaxed mb-12">
@@ -327,7 +347,6 @@ export function Projects() {
                       <ExternalLink className="w-3 h-3" /> Live Demo
                     </a>
                   </div>
-                </div>
               </div>
             </motion.div>
           </div>
