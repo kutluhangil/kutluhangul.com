@@ -226,81 +226,81 @@ const projects = [
       github: "https://github.com/kutluhangil",
       live: "https://github.com/kutluhangil"
     }
+  },
+  {
+    title: "SLIM MOMS",
+    subtitle: "Calorie Tracker App",
+    tags: ["React", "Node.js"] as FilterKey[],
+    description: "A fullstack web application for tracking daily calorie intake with personalized recommendations based on the user's physical parameters and blood type.",
+    fullDescription: (
+      <div className="space-y-8 text-sm md:text-base">
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">📖</span> About the Project</h4>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            Slim Moms allows users to calculate their personalized daily calorie goal based on height, weight, age, and blood type. It features a daily food diary where users can search, add products, and track their consumed calories against their daily limits.
+          </p>
+          <p className="text-muted-foreground font-light leading-relaxed mb-4">
+            Unregistered users can utilize a quick calorie calculator on the landing page, while authenticated users get access to detailed tracking and personalized non-recommended food lists.
+          </p>
+        </section>
+
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">✨</span> Core Features</h4>
+          <ul className="list-disc pl-5 space-y-1 text-muted-foreground font-light mb-4">
+            <li>Public & Private Routing with persistent JWT sessions via Redux Persist</li>
+            <li>Personalized calorie calculator algorithm based on blood types</li>
+            <li>Interactive Food Diary with searchable product database</li>
+            <li>Dynamic UI rendering based on daily intake vs. goal comparison</li>
+            <li>Custom modals displaying personalized non-recommended foods</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">⚙️</span> Technical Architecture</h4>
+          <ul className="list-disc pl-5 space-y-2 text-muted-foreground font-light">
+            <li><strong>Frontend:</strong> React, Vite, Redux Toolkit, React Router DOM, Axios.</li>
+            <li><strong>Backend:</strong> Node.js, Express, MongoDB Atlas, Mongoose.</li>
+            <li><strong>Authentication:</strong> JWT (token-based), bcryptjs password hashing.</li>
+            <li><strong>Documentation:</strong> Swagger UI Express for interactive API specs.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4 className="flex items-center gap-2 font-display text-xl mb-4"><span className="text-xl">🛠️</span> Technologies Used</h4>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {["React 19", "Redux Toolkit", "Node.js", "Express", "MongoDB", "Swagger UI", "JWT", "Axios", "Vite", "ESLint"].map(tech => (
+              <span key={tech} className="px-3 py-1 bg-muted/40 text-[10px] uppercase tracking-widest border border-border/40">{tech}</span>
+            ))}
+          </div>
+        </section>
+      </div>
+    ),
+    image: "/images/projects/slimmoms/1.jpg",
+    modalImage: [
+      "/images/projects/slimmoms/1.jpg", 
+      "/images/projects/slimmoms/2.jpg", 
+      "/images/projects/slimmoms/3.jpg", 
+      "/images/projects/slimmoms/4.jpg",
+      "/images/projects/slimmoms/5.jpg"
+    ],
+    links: {
+      github: "https://github.com/goit-nodejs-project/slim-moms",
+      live: "https://goit-slim-moms.vercel.app/"
+    }
   }
 ];
 
 const ScrollableImage = ({ src, alt }: { src: string | string[]; alt: string }) => {
-  const [bgPos, setBgPos] = useState("0%");
-  
-  const containerRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [translateY, setTranslateY] = useState(0);
-
-  const calculateScroll = (yPos: number, containerHeight: number) => {
-    const percentage = Math.max(0, Math.min(100, (yPos / containerHeight) * 100));
-    setBgPos(`${percentage}%`);
-
-    if (containerRef.current && contentRef.current) {
-      const scrollableDistance = contentRef.current.scrollHeight - containerRef.current.clientHeight;
-      if (scrollableDistance > 0) {
-        setTranslateY((percentage / 100) * scrollableDistance);
-      }
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { top, height } = e.currentTarget.getBoundingClientRect();
-    calculateScroll(e.clientY - top, height);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    const { top, height } = e.currentTarget.getBoundingClientRect();
-    calculateScroll(e.touches[0].clientY - top, height);
-  };
-
-  const handleMouseLeave = () => {
-    setBgPos("0%");
-    setTranslateY(0);
-  };
-
-  if (Array.isArray(src)) {
-    return (
-      <div 
-        ref={containerRef}
-        className="w-full h-full overflow-hidden cursor-ns-resize grayscale hover:grayscale-0 transition-all duration-75 relative bg-muted"
-        onMouseMove={handleMouseMove}
-        onTouchMove={handleTouchMove}
-        onMouseLeave={handleMouseLeave}
-        onTouchEnd={handleMouseLeave}
-        title={alt}
-      >
-        <div 
-          ref={contentRef}
-          className="w-full flex flex-col transition-transform duration-75 ease-linear"
-          style={{ transform: `translateY(-${translateY}px)` }}
-        >
-          {src.map((imgSrc, i) => (
-            <img key={i} src={imgSrc} alt={`${alt} ${i}`} className="w-full h-auto block" />
-          ))}
-        </div>
-      </div>
-    );
-  }
+  const images = Array.isArray(src) ? src : [src];
 
   return (
-    <div 
-      className="w-full h-full bg-top bg-no-repeat transition-[background-position] duration-75 ease-linear cursor-ns-resize grayscale hover:grayscale-0"
-      style={{ 
-        backgroundImage: `url(${src})`,
-        backgroundPosition: `center ${bgPos}`,
-        backgroundSize: "100% auto"
-      }}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleTouchMove}
-      onMouseLeave={handleMouseLeave}
-      onTouchEnd={handleMouseLeave}
-      title={alt}
-    />
+    <div className="w-full h-full overflow-y-auto overflow-x-hidden custom-scrollbar grayscale hover:grayscale-0 transition-all duration-300 bg-muted">
+      <div className="flex flex-col w-full h-max">
+        {images.map((imgSrc, i) => (
+          <img key={`${imgSrc}-${i}`} src={imgSrc} alt={`${alt} ${i}`} className="w-full h-auto block" />
+        ))}
+      </div>
+    </div>
   );
 };
 
