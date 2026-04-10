@@ -129,7 +129,7 @@ This provides the viewer with exactly what feeling an app has without them ever 
 
 Feel free to reach out to me for opportunities or collaborations!
 
-* Email: [Add your email here]
+* Email: [kutluhangil@gmail.com](mailto:kutluhangil@gmail.com)
 * LinkedIn: [Kutluhan Gül](https://www.linkedin.com/in/kutluhan-gul)
 * GitHub: [kutluhangil](https://github.com/kutluhangil)
 
