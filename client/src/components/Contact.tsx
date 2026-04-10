@@ -3,18 +3,69 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertMessageSchema, type InsertMessage } from "@shared/schema";
+import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<InsertMessage>({
     resolver: zodResolver(insertMessageSchema),
   });
-  
-  const onSubmit = (data: InsertMessage) => {
-    // Statik Vercel deployment'ı için backend (Express) gerektirmeyecek mailto çözümü:
-    const subject = encodeURIComponent(`Portfolio İletişim: ${data.name}`);
-    const body = encodeURIComponent(`İsim: ${data.name}\nE-posta: ${data.email}\n\nMesaj:\n${data.message}`);
-    window.location.href = `mailto:kutluhangul@windowslive.com?subject=${subject}&body=${body}`;
-    reset();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const onSubmit = async (data: InsertMessage) => {
+    setIsSubmitting(true);
+    
+    try {
+      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+      
+      if (!accessKey) {
+        toast({
+          title: "Configuration Error",
+          description: "Web3Forms Access Key is missing. Please configure it in your Vercel Environment Variables.",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
+        return;
+      }
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Portfolio İletişim Formu: ${data.name}`,
+          from_name: data.name,
+          email: data.email,
+          message: data.message
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        reset();
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+      } else {
+        toast({
+          title: "Failed to send",
+          description: "Something went wrong on the server. Please try again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Network error occurred. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,7 +99,7 @@ export function Contact() {
                 type="text"
                 placeholder="Name"
                 className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 py-4 w-full focus:outline-none focus:border-background text-background placeholder:text-background/40 transition-colors"
-                disabled={false}
+                disabled={isSubmitting}
               />
               {errors.name && (
                 <span className="absolute -bottom-6 left-0 text-xs text-red-400">{errors.name.message}</span>
@@ -61,7 +112,7 @@ export function Contact() {
                 type="email"
                 placeholder="Email Address"
                 className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 py-4 w-full focus:outline-none focus:border-background text-background placeholder:text-background/40 transition-colors"
-                disabled={false}
+                disabled={isSubmitting}
               />
               {errors.email && (
                 <span className="absolute -bottom-6 left-0 text-xs text-red-400">{errors.email.message}</span>
@@ -75,7 +126,7 @@ export function Contact() {
               rows={4}
               placeholder="Your inquiry..."
               className="bg-transparent border-0 border-b border-background/30 rounded-none px-0 py-4 w-full focus:outline-none focus:border-background text-background placeholder:text-background/40 transition-colors resize-none"
-              disabled={false}
+              disabled={isSubmitting}
             />
             {errors.message && (
               <span className="absolute -bottom-6 left-0 text-xs text-red-400">{errors.message.message}</span>
@@ -85,10 +136,10 @@ export function Contact() {
           <div className="text-center pt-8">
             <button
               type="submit"
-              disabled={false}
+              disabled={isSubmitting}
               className="border border-background text-background hover:bg-background hover:text-foreground px-12 py-4 text-xs tracking-widest uppercase transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-3"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </div>
         </motion.form>

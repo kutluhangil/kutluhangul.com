@@ -1,17 +1,72 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, ArrowRight, Check } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 3000);
+    if (!email) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+      
+      if (!accessKey) {
+        toast({
+          title: "Configuration Error",
+          description: "Web3Forms Access Key is missing. Please configure it in your Vercel Environment Variables.",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
+        return;
+      }
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `Yeni Bülten Aboneliği: ${email}`,
+          from_name: "Portfolio Newsletter System",
+          email: email,
+          message: `${email} ismimli kullanıcı, proje ve blog güncellemeleri için bülteninize abone oldu.`
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubscribed(true);
+        setEmail("");
+        toast({
+          title: "Successfully Subscribed!",
+          description: "You will be notified about new articles and projects.",
+        });
+        setTimeout(() => setSubscribed(false), 5000);
+      } else {
+        toast({
+          title: "Failed to subscribe",
+          description: "Something went wrong on the server. Please try again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Network error occurred. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -38,14 +93,16 @@ export function Newsletter() {
                 placeholder="your@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-muted/30 border border-border/40 text-foreground placeholder-muted-foreground outline-none transition-all hover:bg-muted/50 focus:bg-muted/50 focus:border-foreground/20"
+                className="w-full pl-12 pr-4 py-3 bg-muted/30 border border-border/40 text-foreground placeholder-muted-foreground outline-none transition-all hover:bg-muted/50 focus:bg-muted/50 focus:border-foreground/20 disabled:opacity-50"
                 required
+                disabled={isSubmitting}
                 data-testid="input-email"
               />
             </div>
             <button
               type="submit"
-              className="px-6 py-3 bg-foreground text-background font-medium text-sm uppercase tracking-wider transition-all hover:bg-foreground/90 flex items-center justify-center gap-2 whitespace-nowrap"
+              disabled={isSubmitting || subscribed}
+              className="px-6 py-3 bg-foreground text-background font-medium text-sm uppercase tracking-wider transition-all hover:bg-foreground/90 flex items-center justify-center gap-2 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
               data-testid="button-subscribe"
             >
               {subscribed ? (
@@ -55,7 +112,7 @@ export function Newsletter() {
                 </>
               ) : (
                 <>
-                  Subscribe
+                  {isSubmitting ? "Sending..." : "Subscribe"}
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}
