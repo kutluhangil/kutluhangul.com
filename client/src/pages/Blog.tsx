@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 
-type Category = "All" | "Dev" | "Notes" | "Photography";
+type Category = "All" | "Dev" | "Notes";
 
-const categories: Category[] = ["All", "Dev", "Notes", "Photography"];
+const categories: Category[] = ["All", "Dev", "Notes"];
 
 const staticPosts = [
   {
@@ -11,56 +11,64 @@ const staticPosts = [
     title: "From Operations to Code: My Career Transition Story",
     excerpt:
       "After 8+ years in hospitality and logistics, making the decision to pivot into software development was the most deliberate — and terrifying — choice I've made. Here's what I learned.",
-    category: "Notes",
+    category: "Notes" as Category,
     date: "2025-03-15",
     readTime: "5 min read",
+    published: true,
   },
   {
     id: 2,
     title: "Building Cinemania: Lessons from My First Team Project",
     excerpt:
       "Working in a team of 5 across different timezones taught me more about real-world development than any solo project. Here's a breakdown of our workflow, decisions, and the bugs that haunted us.",
-    category: "Dev",
+    category: "Dev" as Category,
     date: "2025-02-28",
     readTime: "8 min read",
+    published: true,
   },
   {
     id: 3,
     title: "The 'Now' Page Philosophy",
     excerpt:
       "Derek Sivers' concept of a '/now' page is deceptively simple but surprisingly powerful. It forces you to articulate what you're actually focused on — not just what you want people to think you're doing.",
-    category: "Notes",
+    category: "Notes" as Category,
     date: "2025-01-10",
     readTime: "3 min read",
+    published: true,
   },
   {
     id: 4,
-    title: "Why I Shoot in Black & White",
+    title: "CSS Architecture: Why I Stopped Fighting with Specificity",
     excerpt:
-      "Color can be a crutch. When you remove it, your eye is forced to look for light, shadow, form, and texture. This is what drew me to monochromatic photography — and kept me there.",
-    category: "Photography",
+      "After months of specificity wars and !important abuse, I finally sat down with BEM, CSS Modules, and utility-first methodologies. Here's what actually stuck and why.",
+    category: "Dev" as Category,
     date: "2024-12-05",
     readTime: "4 min read",
+    published: true,
   },
   {
     id: 5,
     title: "Understanding React Query: No More useEffect for Data Fetching",
     excerpt:
       "I resisted using React Query for months. Once I understood what it was actually solving — server state vs. client state — I couldn't imagine going back to manual fetch + useEffect patterns.",
-    category: "Dev",
+    category: "Dev" as Category,
     date: "2024-11-20",
     readTime: "6 min read",
+    published: true,
   },
   {
     id: 6,
     title: "On Vibecoding: When Intuition Meets Engineering",
     excerpt:
       "There's a moment in development where you're no longer just following a tutorial or copying a pattern — you're feeling your way through the problem. I call this vibecoding, and it's worth cultivating.",
-    category: "Dev",
+    category: "Dev" as Category,
     date: "2024-10-14",
     readTime: "5 min read",
+    published: true,
   },
 ];
+
+import { useState } from "react";
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
@@ -134,9 +142,10 @@ export default function Blog() {
                   <p className="text-foreground/70 font-light leading-relaxed mb-6">
                     {post.excerpt}
                   </p>
-                  <button className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">
-                    Read More
-                  </button>
+                  {/* "Read More" — Yazı henüz hazır değil, yakında eklenecek */}
+                  <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground/40 cursor-not-allowed select-none border-b border-muted/20 pb-1">
+                    Coming Soon
+                  </span>
                 </article>
               ))
             )}

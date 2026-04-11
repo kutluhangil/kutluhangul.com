@@ -21,10 +21,10 @@ const staticFeaturedPosts = [
   },
   {
     id: 3,
-    title: "Why I Shoot in Black & White",
+    title: "CSS Architecture: Why I Stopped Fighting with Specificity",
     excerpt:
-      "Color can be a crutch. When you remove it, your eye is forced to look for light, shadow, form, and texture.",
-    category: "Photography",
+      "After months of !important abuse, I finally understood BEM and utility-first CSS. Here's what actually made it click.",
+    category: "Dev",
     date: "2024-12-05",
   },
 ];

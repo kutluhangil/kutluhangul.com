@@ -1,28 +1,36 @@
 import { motion } from "framer-motion";
-import { BookOpen, Code2, Headphones, MapPin } from "lucide-react";
+import { BookOpen, Code2, Headphones, MapPin, Target } from "lucide-react";
 
 const nowItems = [
   {
     icon: Code2,
     label: "Building",
-    content: "My personal portfolio at kutluhangul.com — full-stack with React, TypeScript, and Express. Also deepening my Node.js skills with the GoIT Full Stack Developer program.",
+    content: "Actively working on my portfolio at kutluhangul.com and deepening my full-stack skills with the GoIT Full Stack Developer program. Currently exploring Node.js, MongoDB, and REST API design patterns.",
+  },
+  {
+    icon: Target,
+    label: "Focus",
+    content: "Job hunting. Looking for my first professional developer role — open to full-time positions, junior roles, and freelance collaborations. If you need a motivated developer who ships, let's talk.",
   },
   {
     icon: BookOpen,
     label: "Reading",
-    content: "\"The Pragmatic Programmer\" by David Thomas & Andrew Hunt. Slowly working through \"Clean Code\" in parallel.",
+    content: "\"The Pragmatic Programmer\" by David Thomas & Andrew Hunt. Slowly working through \"Clean Code\" in parallel. Both are reshaping how I think about code quality.",
   },
   {
     icon: Headphones,
     label: "Listening",
-    content: "A mix of ambient electronic and post-rock for coding sessions. Lately hooked on Ólafur Arnalds and65daysofstatic.",
+    content: "A mix of ambient electronic and post-rock for deep coding sessions. Lately hooked on Ólafur Arnalds and 65daysofstatic. Lo-fi hip-hop for lighter work.",
   },
   {
     icon: MapPin,
     label: "Location",
-    content: "Based in Istanbul, Turkey. Open to remote work globally.",
+    content: "Based in Istanbul, Turkey. Open to remote work globally and on-site opportunities in Turkey.",
   },
 ];
+
+// Son güncelleme tarihi — manuel güncelle
+const LAST_UPDATED = "April 2026";
 
 export default function Now() {
   return (
@@ -35,12 +43,7 @@ export default function Now() {
         <h1 className="text-4xl md:text-6xl font-display mb-4 italic">Now</h1>
         <p className="text-muted-foreground font-light mb-16 text-lg">
           Last updated:{" "}
-          <span className="text-foreground">
-            {new Date().toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-            })}
-          </span>
+          <span className="text-foreground">{LAST_UPDATED}</span>
         </p>
 
         {/* Now items */}
@@ -84,8 +87,8 @@ export default function Now() {
             >
               Derek Sivers
             </a>
-            , this is a &ldquo;Now&rdquo; page. It tells you what I'm focused on at this point in my life.
-            It's a great way to stay accountable and share my current trajectory.
+            , this is a &ldquo;Now&rdquo; page. It tells you what I&apos;m focused on at this point in my life.
+            It&apos;s a great way to stay accountable and share my current trajectory.
           </p>
         </div>
       </motion.div>
