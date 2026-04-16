@@ -350,11 +350,11 @@ export function Projects() {
                 onClick={() => setSelectedProject(project)}
                 data-testid={`card-project-${index}`}
               >
-                <div className="aspect-video overflow-hidden bg-muted mb-8 relative border border-border/40">
+                <div className="overflow-hidden bg-muted mb-8 relative border border-border/40">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                 </div>
                 <div>
