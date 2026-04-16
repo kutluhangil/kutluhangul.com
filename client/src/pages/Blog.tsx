@@ -180,7 +180,7 @@ export default function Blog() {
                     </span>
                     <span className="text-xs text-muted-foreground/60">{post.readTime}</span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-display mb-4 group-hover:text-muted-foreground transition-colors">
+                  <h2 className="text-2xl md:text-3xl font-display mb-4 hover:text-muted-foreground transition-colors cursor-pointer">
                     {post.title}
                   </h2>
                   <div className="text-foreground/70 font-light leading-relaxed mb-6 space-y-4">

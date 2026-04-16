@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { useLanguage } from "@/lib/i18n";
 
 // ✏️ AVAILABILITY CONFIG — İş aradığında true, iş bulunca false yap
 const AVAILABLE_FOR_WORK = true;
 
 export function Hero() {
-  const { t } = useLanguage();
   return (
     <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-background">
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
@@ -38,7 +36,7 @@ export function Hero() {
             )}
           </span>
           <span className="text-[10px] uppercase tracking-[0.25em] text-foreground/70">
-            {AVAILABLE_FOR_WORK ? t("hero.available") : t("hero.notAvailable")}
+            {AVAILABLE_FOR_WORK ? "Available for new opportunities" : "Currently not available"}
           </span>
         </motion.div>
 
@@ -48,7 +46,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8"
         >
-          {t("hero.role")}
+          Full Stack Developer
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -56,7 +54,7 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="text-5xl md:text-7xl lg:text-8xl font-display font-medium text-balance leading-tight tracking-tight mb-12"
         >
-          {t("hero.title1")}<span className="italic font-light">{t("hero.title2")}</span>{t("hero.title3")}
+          Building digital <span className="italic font-light">experiences</span> with precision.
         </motion.h1>
         
         <motion.div
@@ -69,13 +67,13 @@ export function Hero() {
             href="/#projects"
             className="inline-block border border-foreground bg-foreground text-background px-8 py-4 text-xs uppercase tracking-widest hover:bg-transparent hover:text-foreground transition-all duration-500 ease-out"
           >
-            {t("hero.btn.projects")}
+            View Projects
           </a>
           <Link
             href="/blog"
             className="inline-block border border-foreground px-8 py-4 text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-all duration-500 ease-out"
           >
-            {t("hero.btn.blog")}
+            Blog & Notes
           </Link>
         </motion.div>
       </div>

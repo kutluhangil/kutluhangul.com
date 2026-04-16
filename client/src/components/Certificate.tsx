@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Download, ExternalLink } from "lucide-react";
-import { useLanguage } from "@/lib/i18n";
 
 export function Certificate() {
-  const { t } = useLanguage();
   return (
     <section id="certificate" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -17,11 +15,11 @@ export function Certificate() {
           <div className="flex items-center gap-4 mb-4">
             <span className="h-px w-12 bg-foreground/20"></span>
             <span className="text-[10px] tracking-widest uppercase text-muted-foreground">
-              {t("cert.milestone")}
+              Milestone
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-display uppercase tracking-wider">
-            {t("cert.title")}
+            Certificate
           </h2>
         </motion.div>
 
@@ -41,13 +39,13 @@ export function Certificate() {
                 className="bg-background text-foreground px-6 py-3 text-xs uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors flex items-center gap-2"
               >
                 <ExternalLink className="w-4 h-4" />
-                {t("cert.viewFull")}
+                View Full
               </a>
             </div>
             {/* Provide a visual representation or embedded PDF. Using an embed for PDF or an icon. */}
             <div className="text-center text-muted-foreground flex flex-col items-center gap-4">
               <Download className="w-12 h-12 opacity-50" />
-              <span className="text-xs uppercase tracking-widest">{t("cert.goit")}</span>
+              <span className="text-xs uppercase tracking-widest">GoIT Fullstack Developer</span>
             </div>
             {/* If you want to render the PDF preview directly (only works well on desktop) */}
             {/* <embed src="/certifikate_fullstack_developer.pdf" width="100%" height="100%" type="application/pdf" className="hidden md:block absolute inset-0 object-cover" /> */}
@@ -55,12 +53,14 @@ export function Certificate() {
 
           <div className="flex-1 space-y-6">
             <div>
-              <h3 className="text-2xl font-display mb-2">{t("cert.program")}</h3>
-              <p className="text-muted-foreground font-light text-sm">{t("cert.issued")}</p>
+              <h3 className="text-2xl font-display mb-2">Full Stack Developer Program</h3>
+              <p className="text-muted-foreground font-light text-sm">Issued by GoIT</p>
             </div>
             
             <p className="text-foreground/80 font-light leading-relaxed">
-              {t("cert.desc")}
+              Successfully completed 700+ hours of intensive training, mastering both frontend and backend development. 
+              The curriculum included HTML5, CSS3, JavaScript (ES6+), React, Node.js, MongoDB, TypeScript, and REST APIs, 
+              focusing on real-world projects and team collaboration.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4 border-t border-border/40">
@@ -70,7 +70,7 @@ export function Certificate() {
                 className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:opacity-60 transition-opacity bg-foreground text-background px-6 py-3"
               >
                 <Download className="w-4 h-4" />
-                {t("cert.download")}
+                Download PDF
               </a>
               <a
                 href="/certifikate_fullstack_developer.pdf"
@@ -79,7 +79,7 @@ export function Certificate() {
                 className="inline-flex items-center gap-2 text-xs uppercase tracking-widest hover:opacity-60 transition-opacity border border-border/40 px-6 py-3"
               >
                 <ExternalLink className="w-4 h-4" />
-                {t("cert.open")}
+                Open File
               </a>
             </div>
           </div>

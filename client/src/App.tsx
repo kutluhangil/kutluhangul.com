@@ -51,18 +51,14 @@ function Router() {
   );
 }
 
-import { LanguageProvider } from "@/lib/i18n";
-
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <TooltipProvider>
-          <CustomCursor />
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </LanguageProvider>
+      <TooltipProvider>
+        <CustomCursor />
+        <Toaster />
+        <Router />
+      </TooltipProvider>
     </QueryClientProvider>
   );
 }
