@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n";
 
 export function About() {
+  const { t } = useLanguage();
   const skills = [
     "HTML/CSS", "JavaScript", "React", "TypeScript", 
     "Node.js", "REST API", "Redux", "Clean UI", 
@@ -33,21 +35,19 @@ export function About() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="text-3xl md:text-5xl font-display mb-8">
-              Kutluhan <br/><span className="italic text-muted-foreground">Gül</span>.
+              {t("about.title")} <br/><span className="italic text-muted-foreground">{t("about.title2")}</span>
             </h2>
             <div className="space-y-6 text-foreground/70 font-light leading-relaxed text-lg mb-8">
               <p>
-                Full Stack Developer in transition with 2.5+ years of experience as a Senior Selling Partner Support Associate at Amazon. 
-                In 2024, I made a deliberate career shift into software development to build strong technical foundations in modern web technologies.
+                {t("about.p1")}
               </p>
               <p>
-                Backed by 8+ years of international professional experience, including hospitality and supervisory roles in the United States, 
-                I bring strong analytical thinking, problem-solving skills, and a disciplined work ethic to every project.
+                {t("about.p2")}
               </p>
             </div>
 
             <div className="mb-12">
-              <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">Technical Skills</h3>
+              <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">{t("about.skills")}</h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
                   <span key={skill} className="px-4 py-2 border border-border/40 text-xs uppercase tracking-widest bg-muted/30">
@@ -60,8 +60,8 @@ export function About() {
             <div className="mt-12 flex flex-wrap gap-8">
               <a href="https://linkedin.com/in/kutluhangil" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">LinkedIn</a>
               <a href="https://github.com/kutluhangil" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1">GitHub</a>
-              <a href="/documents/Kutluhan_Gul_Full_Stack_Developer.pdf" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">View Online Resume</a>
-              <a href="/documents/Kutluhan_Gul_Full_Stack_Developer.pdf" download="Kutluhan_Gul_Full_Stack_Developer.pdf" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">Download PDF</a>
+              <a href="/documents/Kutluhan_Gul_Full_Stack_Developer.pdf" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">{t("about.resume")}</a>
+              <a href="/documents/Kutluhan_Gul_Full_Stack_Developer.pdf" download="Kutluhan_Gul_Full_Stack_Developer.pdf" className="text-xs uppercase tracking-widest border-b border-foreground/20 hover:border-foreground transition-colors pb-1 font-medium">{t("about.download")}</a>
             </div>
           </motion.div>
         </div>
@@ -69,81 +69,81 @@ export function About() {
         {/* Experience & Education Grid */}
         <div className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-border/40 pt-16">
           <div>
-            <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-10">Work Experience</h3>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-10">{t("about.exp")}</h3>
             <div className="space-y-12">
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">Aug 2022 — Nov 2024</span>
-                <h4 className="text-xl font-display">Amazon (Remote)</h4>
-                <p className="text-sm text-foreground mb-4">Senior Selling Partner Support Associate</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("exp.1.date")}</span>
+                <h4 className="text-xl font-display">{t("exp.1.company")}</h4>
+                <p className="text-sm text-foreground mb-4">{t("exp.1.role")}</p>
                 <div className="text-sm font-light text-foreground/70 leading-relaxed space-y-2 border-l border-border/40 pl-4">
-                  <p>Delivered multi-channel technical support (chat, email, and phone) to over 60 active sellers across European marketplaces, including the UK.</p>
-                  <p>Resolved complex issues related to product listings, catalog errors, account health, and platform policies.</p>
-                  <p>Assisted sellers with product uploads, listing optimization, inventory management, payment processes, and troubleshooting backend system errors.</p>
+                  <p>{t("exp.1.desc1")}</p>
+                  <p>{t("exp.1.desc2")}</p>
+                  <p>{t("exp.1.desc3")}</p>
                 </div>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">Sep 2021 — Aug 2022</span>
-                <h4 className="text-xl font-display">Crowne Plaza Istanbul Tuzla</h4>
-                <p className="text-sm text-foreground mb-4">Guest Service Agent</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("exp.2.date")}</span>
+                <h4 className="text-xl font-display">{t("exp.2.company")}</h4>
+                <p className="text-sm text-foreground mb-4">{t("exp.2.role")}</p>
                 <p className="text-sm font-light text-foreground/70 leading-relaxed border-l border-border/40 pl-4">
-                  Managed front-desk services, handling reservations, check-ins/check-outs, secure transactions, and guest inquiries to ensure a smooth and professional experience.
+                  {t("exp.2.desc")}
                 </p>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">May 2019 — Sep 2021</span>
-                <h4 className="text-xl font-display">Radisson Blu Hotel & Spa</h4>
-                <p className="text-sm text-foreground mb-4">Guest Service Agent</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("exp.3.date")}</span>
+                <h4 className="text-xl font-display">{t("exp.3.company")}</h4>
+                <p className="text-sm text-foreground mb-4">{t("exp.3.role")}</p>
                 <p className="text-sm font-light text-foreground/70 leading-relaxed border-l border-border/40 pl-4">
-                  Delivered front-desk operations and guest support, handling reservations, check-ins/check-outs, and payment transactions.
+                  {t("exp.3.desc")}
                 </p>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">2013 — 2016</span>
-                <h4 className="text-xl font-display">Hospitality (Work and Travel USA)</h4>
-                <p className="text-sm text-foreground mb-4">Floor Supervisor & Inspector</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("exp.4.date")}</span>
+                <h4 className="text-xl font-display">{t("exp.4.company")}</h4>
+                <p className="text-sm text-foreground mb-4">{t("exp.4.role")}</p>
                 <div className="text-sm font-light text-foreground/70 leading-relaxed space-y-2 border-l border-border/40 pl-4">
-                  <p>Gained hands-on experience in hospitality and retail roles in Park City, Utah (Westgate Resorts, Canyons Resort, 7-Eleven).</p>
-                  <p>Progressed to supervisory responsibilities, ensuring high standards of cleanliness, conducting inspections, and managing inventory.</p>
-                  <p>Significantly strengthened English communication skills by working directly with international guests.</p>
+                  <p>{t("exp.4.desc1")}</p>
+                  <p>{t("exp.4.desc2")}</p>
+                  <p>{t("exp.4.desc3")}</p>
                 </div>
               </motion.div>
             </div>
           </div>
 
           <div>
-            <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-10">Education</h3>
+            <h3 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-10">{t("about.edu")}</h3>
             <div className="space-y-12">
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">2025 — Present</span>
-                <h4 className="text-xl font-display">IT School GoIT</h4>
-                <p className="text-sm text-foreground/70">Full Stack Developer Program</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("edu.1.date")}</span>
+                <h4 className="text-xl font-display">{t("edu.1.school")}</h4>
+                <p className="text-sm text-foreground/70">{t("edu.1.program")}</p>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">2022 — 2026</span>
-                <h4 className="text-xl font-display">Anadolu University</h4>
-                <p className="text-sm text-foreground/70">Associate's Degree in Computer Programming</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("edu.2.date")}</span>
+                <h4 className="text-xl font-display">{t("edu.2.school")}</h4>
+                <p className="text-sm text-foreground/70">{t("edu.2.program")}</p>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">2019 — 2021</span>
-                <h4 className="text-xl font-display">Anadolu University</h4>
-                <p className="text-sm text-foreground/70">Associate's Degree in Web Coding</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("edu.3.date")}</span>
+                <h4 className="text-xl font-display">{t("edu.3.school")}</h4>
+                <p className="text-sm text-foreground/70">{t("edu.3.program")}</p>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">2017 — 2019</span>
-                <h4 className="text-xl font-display">Atilim University</h4>
-                <p className="text-sm text-foreground/70">Master's Degree in Tourism and Travel Services Management</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("edu.4.date")}</span>
+                <h4 className="text-xl font-display">{t("edu.4.school")}</h4>
+                <p className="text-sm text-foreground/70">{t("edu.4.program")}</p>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <span className="text-xs text-muted-foreground mb-1 block">2009 — 2014</span>
-                <h4 className="text-xl font-display">Mustafa Kemal University</h4>
-                <p className="text-sm text-foreground/70">Bachelor's Degree in Tourism and Hotel Management</p>
+                <span className="text-xs text-muted-foreground mb-1 block">{t("edu.5.date")}</span>
+                <h4 className="text-xl font-display">{t("edu.5.school")}</h4>
+                <p className="text-sm text-foreground/70">{t("edu.5.program")}</p>
               </motion.div>
             </div>
           </div>

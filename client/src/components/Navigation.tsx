@@ -3,11 +3,13 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/lib/i18n";
 
 const navLinks = [
   { href: "/", label: "Home", isRoute: true },
   { href: "/#about", label: "About", isRoute: false },
   { href: "/#projects", label: "Projects", isRoute: false },
+  { href: "/#certificate", label: "Certificate", isRoute: false },
   { href: "/blog", label: "Blog & Notes", isRoute: true },
   { href: "/now", label: "Now", isRoute: true },
   { href: "/uses", label: "Uses", isRoute: true },
@@ -17,6 +19,7 @@ const navLinks = [
 export function Navigation() {
   const { scrollY } = useScroll();
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const { lang, setLang, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -93,7 +96,7 @@ export function Navigation() {
                   }}
                   className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors"
                 >
-                  {link.label}
+                  {t(`nav.${link.label.toLowerCase().replace(/ & /g, '').replace(/ /g, '')}`)}
                 </Link>
               ) : (
                 <a
@@ -101,9 +104,20 @@ export function Navigation() {
                   href={link.href}
                   className="text-xs tracking-widest uppercase text-foreground/80 hover:text-foreground transition-colors"
                 >
-                  {link.label}
+                  {t(`nav.${link.label.toLowerCase().replace(/ & /g, '').replace(/ /g, '')}`)}
                 </a>
               )
+            )}
+
+            {/* Language toggle */}
+            {mounted && (
+              <button
+                onClick={() => setLang(lang === "tr" ? "en" : "tr")}
+                className="p-2 text-xs font-semibold tracking-widest text-foreground/70 hover:text-foreground transition-colors uppercase border border-border/40 ml-2"
+                aria-label="Toggle language"
+              >
+                {lang === "tr" ? "TR" : "EN"}
+              </button>
             )}
 
             {/* Dark mode toggle */}
@@ -119,7 +133,16 @@ export function Navigation() {
           </nav>
 
           {/* Mobile controls */}
-          <div className="flex md:hidden items-center gap-4">
+          <div className="flex md:hidden items-center gap-2">
+            {mounted && (
+              <button
+                onClick={() => setLang(lang === "tr" ? "en" : "tr")}
+                className="p-2 text-xs font-semibold tracking-widest text-foreground/70 hover:text-foreground transition-colors uppercase border border-border/40"
+                aria-label="Toggle language"
+              >
+                {lang === "tr" ? "TR" : "EN"}
+              </button>
+            )}
             {mounted && (
               <button
                 onClick={toggleTheme}
@@ -189,7 +212,7 @@ export function Navigation() {
                         onClick={() => setMenuOpen(false)}
                         className="block py-3 text-2xl font-display text-foreground/70 hover:text-foreground transition-colors"
                       >
-                        {link.label}
+                        {t(`nav.${link.label.toLowerCase().replace(/ & /g, '').replace(/ /g, '')}`)}
                       </Link>
                     ) : (
                       <a
@@ -197,7 +220,7 @@ export function Navigation() {
                         onClick={() => setMenuOpen(false)}
                         className="block py-3 text-2xl font-display text-foreground/70 hover:text-foreground transition-colors"
                       >
-                        {link.label}
+                        {t(`nav.${link.label.toLowerCase().replace(/ & /g, '').replace(/ /g, '')}`)}
                       </a>
                     )}
                   </motion.div>

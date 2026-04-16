@@ -7,6 +7,50 @@ const categories: Category[] = ["All", "Dev", "Notes"];
 
 const staticPosts = [
   {
+    id: 0,
+    title: "Successfully Completed the Full Stack Developer Program at GoIT",
+    excerpt: (
+      <div className="space-y-4">
+        <p>After 10 months of intensive learning, I've successfully completed the Full Stack Developer program at GoIT.</p>
+        <p>This journey included 700+ hours of training, covering both frontend and backend development in depth.</p>
+        <p>During the program, I worked with:</p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React (Hooks, Router, Redux Toolkit)</li>
+          <li>Node.js & Express</li>
+          <li>MongoDB</li>
+          <li>TypeScript</li>
+          <li>REST APIs</li>
+        </ul>
+        <p>I completed 36+ technical assignments and 4 team projects. The final project was a comprehensive team project that brought together everything we learned throughout the program.</p>
+        <p>Breakdown of the learning process:</p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>HTML & CSS → 120 hours (6 assignments)</li>
+          <li>JavaScript → 234 hours (12 assignments)</li>
+          <li>React → 135 hours (8 assignments)</li>
+          <li>Node.js → 155 hours (7 assignments)</li>
+          <li>TypeScript → 25 hours (3 assignments)</li>
+        </ul>
+        <p>I successfully passed all exams and earned this certificate.</p>
+        <p>In addition to the program, I also developed 8 personal projects during this period, which I'll be sharing gradually.</p>
+        <p>You can check my work here:<br />
+          🔗 <a href="https://github.com/kutluhangil" className="underline hover:text-foreground">https://github.com/kutluhangil</a><br />
+          🔗 <a href="https://www.kutluhangul.com/" className="underline hover:text-foreground">https://www.kutluhangul.com/</a>
+        </p>
+        <p>(My portfolio website is also one of the projects I built — you can explore my work there in detail.)</p>
+        <p>Throughout this journey, I also improved my English by completing additional training focused on understanding and using technical terms in software development.</p>
+        <p>It wasn't always easy, but seeing my progress step by step and building real projects made it all worth it.</p>
+        <p>This is just the beginning — I'm excited for what's next 🚀</p>
+        <p>Finally, I would like to thank the entire GoIT team for their support throughout this journey. Special thanks to Sena for her continuous guidance and support 🙏</p>
+      </div>
+    ),
+    category: "Dev" as Category,
+    date: "2026-04-16",
+    readTime: "4 min read",
+    published: true,
+  },
+  {
     id: 1,
     title: "From Operations to Code: My Career Transition Story",
     excerpt:
@@ -139,9 +183,9 @@ export default function Blog() {
                   <h2 className="text-2xl md:text-3xl font-display mb-4 group-hover:text-muted-foreground transition-colors">
                     {post.title}
                   </h2>
-                  <p className="text-foreground/70 font-light leading-relaxed mb-6">
+                  <div className="text-foreground/70 font-light leading-relaxed mb-6 space-y-4">
                     {post.excerpt}
-                  </p>
+                  </div>
                   {/* "Read More" — Yazı henüz hazır değil, yakında eklenecek */}
                   <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground/40 cursor-not-allowed select-none border-b border-muted/20 pb-1">
                     Coming Soon
