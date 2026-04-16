@@ -1,8 +1,5 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import cinemaniaImg from "@assets/Desktop_Home_1772658643356.png";
-import focusFrameImg from "@assets/FocusFrame_1440_1772658643357.png";
-import moneyGuardImg from "@assets/Desktop3_1772813924846.png";
 import { X, ExternalLink, Github } from "lucide-react";
 
 type FilterKey = "All" | "HTML/CSS" | "React" | "Node.js";
@@ -79,7 +76,7 @@ const projects = [
         </section>
       </div>
     ),
-    image: cinemaniaImg,
+    image: "/images/projects/covers/cinemania.png",
     modalImage: "/images/projects/cinemania.jpg",
     links: {
       github: "https://github.com/kutluhangil",
@@ -148,7 +145,7 @@ const projects = [
         </section>
       </div>
     ),
-    image: focusFrameImg,
+    image: "/images/projects/covers/focusframe.png",
     modalImage: "/images/projects/focusframe.png",
     links: {
       github: "https://github.com/kutluhangil/goit-focusframe-project",
@@ -215,7 +212,7 @@ const projects = [
         </section>
       </div>
     ),
-    image: moneyGuardImg,
+    image: "/images/projects/covers/moneyguard.png",
     modalImage: [
       "/images/projects/moneyguard/1.jpg", 
       "/images/projects/moneyguard/2.jpg", 
@@ -275,7 +272,7 @@ const projects = [
         </section>
       </div>
     ),
-    image: "/images/projects/slimmoms/1.jpg",
+    image: "/images/projects/covers/slimmoms.png",
     modalImage: [
       "/images/projects/slimmoms/1.jpg", 
       "/images/projects/slimmoms/2.jpg", 
@@ -339,7 +336,7 @@ export function Projects() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, index) => (
               <motion.div
