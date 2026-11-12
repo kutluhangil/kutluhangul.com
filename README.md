@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/media/hero.svg" alt="K.Gül — a portfolio themed as a grand hotel" width="100%">
+<img src="docs/media/hero.svg" alt="kutluhangul.com — a grand hotel facade where the sun sets, windows light up and the neon VACANCY sign flickers on, beside the live Workshop list" width="100%">
 
 <p>
   <a href="https://www.kutluhangul.com/"><img alt="Live" src="https://img.shields.io/badge/live-kutluhangul.com-c9a24a?style=for-the-badge&labelColor=0b0907"></a>
@@ -59,6 +59,31 @@ Toggle the light and the sun really rises or sets across the screen: stars switc
 
 <img src="docs/media/divider.svg" width="100%" alt="">
 
+## Rooms
+
+| Route | Room |
+|---|---|
+| `/` | The lobby: hero, story, statistics, timeline, skills, case studies, gallery, testimonials, credentials, guest book |
+| `/workshop` · `/workshop/:name` | Every public repo, fetched live from the GitHub API, with a page per repo |
+| `/blog` | Writing, served from the site's own API |
+| `/now` | What I am focused on right now |
+| `/uses` | The daily toolkit |
+
+<img src="docs/media/divider.svg" width="100%" alt="">
+
+## Behind the front desk
+
+| Piece | Detail |
+|---|---|
+| **Live presence** | A serverless `api/presence` keeps each visitor's heartbeat in an Upstash Redis sorted set, evicts stale ones, and counts total views, so the lobby can say how many guests are in right now. |
+| **Content API** | An Express server with Drizzle ORM on Postgres serves blog posts and the Now page, and stores contact messages (`posts`, `now_content`, `messages`). |
+| **Forms** | The contact form and the newsletter post to Web3Forms; the access key is a public form key by design. |
+| **GitHub** | Profile stats and the Workshop list come straight from the GitHub API on each visit. |
+| **Copy in one file** | Every visible string lives in `client/src/data/content.ts`; components never hold text. |
+| **Feel** | Page transitions, a custom cursor, reveal-on-scroll sections, film grain and the neon sign component. |
+
+<img src="docs/media/divider.svg" width="100%" alt="">
+
 ## Türkçe özet
 
 **kutluhangul.com**, büyük bir otel temasıyla tasarlanmış kişisel portfolyo sitem. Gece lobisi ile sabah terası arasında, güneşin gerçekten doğup battığı bir animasyonla geçiş yapıyor. Öne çıkan projeler, GitHub'dan her ziyarette canlı çekilen tüm depolar, sertifikalar, yazılar ve iletişim formu burada. Tüm metinler tek bir içerik dosyasından yönetiliyor.
@@ -70,6 +95,8 @@ Toggle the light and the sun really rises or sets across the screen: stars switc
 ```sh
 npm install
 PORT=3000 npm run dev     # port 5000 may be taken by AirPlay on macOS
+npm run check             # tsc
+npm run db:push           # Drizzle schema → Postgres
 npm run build
 ```
 
@@ -78,5 +105,5 @@ All site copy lives in `client/src/data/content.ts`: edit that one file to chang
 <div align="center">
 <br>
 <a href="https://github.com/kutluhangil"><img src="docs/media/signature.svg" width="100%" alt="Built by kutluhangil"></a>
-<sub>From front desk to front-end · the lights are always on.</sub>
+<sub>From front desk to front-end · the lights are always on · the banner is an illustration of the site.</sub>
 </div>
