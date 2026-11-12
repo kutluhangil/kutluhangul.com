@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-label="K.Gül — a portfolio themed as a grand hotel">
+<style>
+.bg{animation:bg 12s linear infinite}
+@keyframes bg{0%,8%{fill:#f5eee2}28%{fill:#4a3426}48%,80%{fill:#0b0907}90%,100%{fill:#f5eee2}}
+.ink{animation:ink 12s linear infinite}
+@keyframes ink{0%,8%{fill:#2a1f16}28%{fill:#fbf2e4}48%,80%{fill:#f4ead9}90%,100%{fill:#2a1f16}}
+.rule{animation:rule 12s linear infinite}
+@keyframes rule{0%,8%{stroke:#2a1f1633}28%{stroke:#fbf2e433}48%,80%{stroke:#f4ead933}90%,100%{stroke:#2a1f1633}}
+.panel{animation:panel 12s linear infinite}
+@keyframes panel{0%,8%{fill:#2a1f1612}28%{fill:#fbf2e412}48%,80%{fill:#f4ead912}90%,100%{fill:#2a1f1612}}
+.muted{opacity:.72}
+.stars{animation:stars 12s linear infinite}
+@keyframes stars{0%,8%{opacity:0}28%{opacity:.25}48%,80%{opacity:.9}90%,100%{opacity:0}}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.25}}
+.lit{filter:drop-shadow(0 0 4px currentColor)}
+.pulse{animation:pulse 2.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@keyframes spin{0%{transform:scaleX(1)}50%{transform:scaleX(0)}100%{transform:scaleX(-1)}}
+@keyframes ping{0%{transform:scale(.6);opacity:1}100%{transform:scale(3.2);opacity:0}}
+@keyframes dash{to{stroke-dashoffset:-20}}
+@keyframes grow{0%{transform:scaleY(.08)}35%,80%{transform:scaleY(1)}100%{transform:scaleY(.08)}}
+@keyframes draw{0%{stroke-dashoffset:700}45%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-700}}
+@keyframes blink{50%{opacity:0}}
+@keyframes feed{0%{transform:translateY(150px);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(-30px);opacity:0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes slide{to{transform:translateX(100px)}}
+@keyframes eq{from{transform:scaleY(.15)}to{transform:scaleY(1)}}
+@keyframes drop{0%,6%{transform:scaleY(0);opacity:0}16%,88%{transform:scaleY(1);opacity:1}96%,100%{transform:scaleY(0);opacity:0}}
+@keyframes gauge{0%,10%{stroke-dashoffset:390}40%,85%{stroke-dashoffset:110}100%{stroke-dashoffset:390}}
+@keyframes lift{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes sweep{0%{transform:skewX(-18deg) translateX(0)}60%,100%{transform:skewX(-18deg) translateX(788px)}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect class="bg" width="1200" height="440" rx="28" fill="#f5eee2"/>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" letter-spacing="2.4"><text class="ink muted" x="64" y="104">PORTFOLIO · REACT + FRAMER MOTION</text></g>
+<text class="ink" x="60" y="236" font-family="'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif" font-style="italic" font-size="78" letter-spacing="-1">K.Gül.</text>
+<text class="ink muted" x="64" y="300" font-family="'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif" font-size="20">From front desk to front-end.</text>
+<line class="rule" x1="64" y1="372" x2="1136" y2="372"/>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" letter-spacing="1.8">
+  <text class="ink muted" x="64" y="404">DAY / NIGHT SUNRISE SWITCH</text>
+  <text class="ink muted" x="600" y="404" text-anchor="middle">LIVE GITHUB WORKSHOP</text>
+  <text class="ink muted" x="1136" y="404" text-anchor="end">CASE STUDIES · GUEST BOOK</text>
+</g>
+<rect class="panel rule" x="652" y="92" width="488" height="262" rx="24"/>
+<g class="stars"><circle cx="1053.3" cy="294" r="1.2" fill="#fff" style="animation:tw 3.8s ease-in-out 0.3s infinite"/><circle cx="845.2" cy="220.7" r="1.1" fill="#fff" style="animation:tw 2.2s ease-in-out 1.9s infinite"/><circle cx="976.7" cy="312.8" r="1.8" fill="#fff" style="animation:tw 3.3s ease-in-out 0.5s infinite"/><circle cx="1033.4" cy="197.6" r="1.2" fill="#fff" style="animation:tw 3.1s ease-in-out 0.9s infinite"/><circle cx="998.7" cy="182.2" r="1" fill="#fff" style="animation:tw 2.5s ease-in-out 0.2s infinite"/><circle cx="783.8" cy="161.1" r="0.9" fill="#fff" style="animation:tw 3.4s ease-in-out 1.7s infinite"/><circle cx="1124.6" cy="128.8" r="1.7" fill="#fff" style="animation:tw 2.9s ease-in-out 0.8s infinite"/><circle cx="887.5" cy="227.2" r="1" fill="#fff" style="animation:tw 1.8s ease-in-out 0.3s infinite"/><circle cx="860.6" cy="109.5" r="1.1" fill="#fff" style="animation:tw 3.4s ease-in-out 1.6s infinite"/><circle cx="900.3" cy="126.7" r="1.1" fill="#fff" style="animation:tw 3.6s ease-in-out 1.8s infinite"/><circle cx="1029.7" cy="205.2" r="0.8" fill="#fff" style="animation:tw 2.6s ease-in-out 1.3s infinite"/><circle cx="1115.5" cy="262" r="1.8" fill="#fff" style="animation:tw 2.1s ease-in-out 0.8s infinite"/><circle cx="778.6" cy="228.5" r="1" fill="#fff" style="animation:tw 2.2s ease-in-out 0.2s infinite"/><circle cx="772.6" cy="154.7" r="1.5" fill="#fff" style="animation:tw 1.6s ease-in-out 1.8s infinite"/><circle cx="859.7" cy="135.2" r="1.1" fill="#fff" style="animation:tw 1.8s ease-in-out 1s infinite"/><circle cx="836.1" cy="281.7" r="1" fill="#fff" style="animation:tw 3.5s ease-in-out 0.4s infinite"/><circle cx="798.3" cy="247.7" r="1.1" fill="#fff" style="animation:tw 2s ease-in-out 1.3s infinite"/><circle cx="1069.8" cy="117.7" r="1" fill="#fff" style="animation:tw 2.3s ease-in-out 0.8s infinite"/><circle cx="995.4" cy="263.6" r="1.6" fill="#fff" style="animation:tw 3.2s ease-in-out 1.9s infinite"/><circle cx="1081.6" cy="262.7" r="1.7" fill="#fff" style="animation:tw 3.9s ease-in-out 1.8s infinite"/><circle cx="684.2" cy="214.4" r="1.1" fill="#fff" style="animation:tw 2.6s ease-in-out 2s infinite"/><circle cx="869" cy="295.1" r="1.5" fill="#fff" style="animation:tw 3.7s ease-in-out 0.3s infinite"/><circle cx="755.9" cy="334.9" r="0.9" fill="#fff" style="animation:tw 2.7s ease-in-out 1.2s infinite"/><circle cx="855.5" cy="304.4" r="1.8" fill="#fff" style="animation:tw 1.8s ease-in-out 1.8s infinite"/><circle cx="1038.4" cy="209.3" r="1.8" fill="#fff" style="animation:tw 3s ease-in-out 1.9s infinite"/><circle cx="1043.3" cy="290.2" r="1.1" fill="#fff" style="animation:tw 1.9s ease-in-out 1.6s infinite"/></g>
+<defs><radialGradient id="pl" cx=".35" cy=".35" r=".75"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset=".25" stop-color="#c9a24a"/><stop offset="1" stop-color="#6fa8a0"/></radialGradient></defs>
+<circle cx="896" cy="223" r="58" fill="#c9a24a" fill-opacity=".18" class="pulse"/>
+<circle cx="896" cy="223" r="40" fill="url(#pl)"/>
+<ellipse cx="896" cy="223" rx="62" ry="10" fill="none" stroke="#ff4f6e" stroke-width="3" stroke-opacity=".7" transform="rotate(-14 896 223)"/><g transform="rotate(-12 896 223)"><ellipse cx="896" cy="223" rx="200" ry="64" fill="none" stroke="#c9a24a" stroke-opacity=".45" stroke-dasharray="2 5"/>
+<circle r="6" fill="#c9a24a" class="lit" style="color:#c9a24a"><animateMotion dur="9s" repeatCount="indefinite" path="M 1096 223 A 200 64 0 1 1 696 223 A 200 64 0 1 1 1096 223"/></circle></g><g transform="rotate(18 896 223)"><ellipse cx="896" cy="223" rx="150" ry="46" fill="none" stroke="#ff4f6e" stroke-opacity=".45" stroke-dasharray="2 5"/>
+<circle r="5" fill="#ff4f6e" class="lit" style="color:#ff4f6e"><animateMotion dur="6s" repeatCount="indefinite" path="M 1046 223 A 150 46 0 1 1 746 223 A 150 46 0 1 1 1046 223"/></circle></g><g transform="rotate(-4 896 223)"><ellipse cx="896" cy="223" rx="100" ry="30" fill="none" stroke="#6fa8a0" stroke-opacity=".45" stroke-dasharray="2 5"/>
+<circle r="4" fill="#6fa8a0" class="lit" style="color:#6fa8a0"><animateMotion dur="4.5s" repeatCount="indefinite" path="M 996 223 A 100 30 0 1 1 796 223 A 100 30 0 1 1 996 223"/></circle></g>
+</svg>

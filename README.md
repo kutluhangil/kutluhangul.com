@@ -1,164 +1,82 @@
 <div align="center">
 
-<br />
+<img src="docs/media/hero.svg" alt="K.Gül — a portfolio themed as a grand hotel" width="100%">
 
-<img src="https://img.shields.io/badge/Portfolio-The_Grand_Hotel-c9a557?style=for-the-badge&logoColor=white" alt="version" />
-<img src="https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=black" alt="react" />
-<img src="https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript" />
-<img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="framer" />
-<img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
+<p>
+  <a href="https://www.kutluhangul.com/"><img alt="Live" src="https://img.shields.io/badge/live-kutluhangul.com-c9a24a?style=for-the-badge&labelColor=0b0907"></a>
+  <img alt="React" src="https://img.shields.io/badge/React-TypeScript-ff4f6e?style=for-the-badge&labelColor=0b0907">
+  <img alt="Framer Motion" src="https://img.shields.io/badge/Framer%20Motion-day%20%2F%20night-6fa8a0?style=for-the-badge&labelColor=0b0907">
+  <img alt="GitHub API" src="https://img.shields.io/badge/GitHub%20API-live-c9a24a?style=for-the-badge&labelColor=0b0907">
+</p>
 
-<br /><br />
+<p><em>My personal portfolio, themed as a grand hotel. It lives in one of two worlds<br>
+and flips between them with a full sunrise and sunset animation.</em></p>
 
-# K.Gül ✦
-
-### Building digital experiences with precision — *from front desk to front‑end*.
-
-[Live Site](https://kutluhangul.com) · [Case Studies](https://kutluhangul.com/#projects) · [The Workshop](https://kutluhangul.com/workshop) · [LinkedIn](https://linkedin.com/in/kutluhangil)
+<a href="https://www.kutluhangul.com/"><img src="docs/screenshots/01-hero-night.png" alt="The lobby at night with the neon vacancy sign" width="100%"></a>
 
 </div>
 
----
+<img src="docs/media/divider.svg" width="100%" alt="">
 
-## ✦ Overview
+## Two worlds
 
-My personal portfolio, themed as **a grand hotel**. The whole site lives in one of two worlds and flips between them with a full sunrise/sunset animation:
+- **Night**: the lobby after midnight. Ink black, brass lamplight and a flickering neon *VACANCY* sign.
+- **Day**: the morning terrace. Sun-bleached linen, espresso ink and the same sign with the power off.
 
-- **🌙 Night** — the lobby after midnight: ink-black, brass lamplight, a flickering neon *VACANCY* sign.
-- **☀️ Day** — the morning terrace: sun-bleached linen, espresso ink, the same sign with the power off.
+Toggle the light and the sun really rises or sets across the screen: stars switch on, a crescent moon climbs, birds cross at dawn, while the theme swaps underneath.
 
-Toggle the light and the sun actually rises or sets across the screen — stars switch on, a crescent moon climbs, birds cross at dawn — while the theme swaps underneath, fully covered.
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/01-hero-night.png" alt="Night"></td>
+    <td width="50%"><img src="docs/screenshots/03-hero-day.png" alt="Day"></td>
+  </tr>
+  <tr>
+    <td align="center"><code>night</code> · the lobby</td>
+    <td align="center"><code>day</code> · the terrace</td>
+  </tr>
+</table>
 
-<div align="center">
-<br />
-<img src="docs/screenshots/01-hero-night.png" alt="Night — the lobby" width="49%" />
-<img src="docs/screenshots/03-hero-day.png" alt="Day — the terrace" width="49%" />
-<br />
-<em>Same hotel, two worlds — night (left) and day (right).</em>
-</div>
+<img src="docs/media/divider.svg" width="100%" alt="">
 
----
+## What's on the site
 
-## ⚡ What's on the site
+| Section | |
+|---|---|
+| **The Lobby** | The hero with the live neon sign, a skills marquee and the full story. |
+| **Case Studies** | Featured projects in scrubbable modals, so you can tour each app without leaving the page. |
+| **The Workshop** | Every public repo, pulled live from the GitHub API on each visit. No redeploy needed. |
+| **Credentials** | The GoIT Full Stack certificate, framed and downloadable. |
+| **Blog, Now and Uses** | Writing, current focus and the daily toolkit, in the hotel's voice. |
+| **The Guest Book** | A contact form and a live LinkedIn feed. |
 
-| Section | What it does |
-|--------|-------------|
-| 🏨 **The Lobby** *(Home)* | Hero with the live neon vacancy sign, a running marquee of skills, and the full story. |
-| 🗂️ **Case Studies** *(Projects)* | Featured project work in scrubbable modals — tour each app without leaving the page. |
-| 🛠️ **The Workshop** *(GitHub)* | Every public repo, pulled **live** from the GitHub API on each visit — no redeploy needed. |
-| 🎖️ **Credentials** | GoIT Full Stack certificate, framed and downloadable. |
-| 📖 **Blog & Notes**, **Now**, **Uses** | Writing, current focus, and the daily toolkit — all in the hotel's voice. |
-| 📇 **The Guest Book** *(Contact)* | Web3Forms-powered message form + a live LinkedIn feed. |
-| 🌗 **Day / Night cycle** | Animated sunrise/sunset theme switch, reduced-motion safe. |
+<table>
+  <tr>
+    <td width="33%"><img src="docs/screenshots/04-workshop.png" alt="The Workshop"></td>
+    <td width="33%"><img src="docs/screenshots/05-logbook.png" alt="The logbook"></td>
+    <td width="33%"><img src="docs/screenshots/06-case-file.png" alt="A case file"></td>
+  </tr>
+</table>
 
----
+<img src="docs/media/divider.svg" width="100%" alt="">
 
-## 🛠️ The Workshop — live GitHub, no maintenance
+## Türkçe özet
 
-The standout feature. The `/workshop` page reads the GitHub API directly from the browser, so **anything pushed to [github.com/kutluhangil](https://github.com/kutluhangil) appears on the site automatically** — there is nothing to redeploy and no data to keep in sync.
+**kutluhangul.com**, büyük bir otel temasıyla tasarlanmış kişisel portfolyo sitem. Gece lobisi ile sabah terası arasında, güneşin gerçekten doğup battığı bir animasyonla geçiş yapıyor. Öne çıkan projeler, GitHub'dan her ziyarette canlı çekilen tüm depolar, sertifikalar, yazılar ve iletişim formu burada. Tüm metinler tek bir içerik dosyasından yönetiliyor.
 
-<div align="center">
-<br />
-<img src="docs/screenshots/04-workshop.png" alt="The Workshop — repository register" width="80%" />
-<br />
-<em>Manager's Picks up top, then a searchable / filterable register of every repository.</em>
-</div>
+<img src="docs/media/divider.svg" width="100%" alt="">
 
-It includes:
+## Development
 
-- **Manager's Picks** — top 3 repos auto-selected by a blend of stars, freshness, and polish (description, homepage, topics).
-- **Search · filter · sort** — live text search (name, description, topics), language-filter chips, and sort by recent / stars / name.
-- **Accordion case files** — each row expands to a README excerpt, language-mix bar, topics, and dates.
-- **Full case file** at `/workshop/:repo` — the complete README rendered, the latest commits ("service log"), language breakdown, stars / forks / open issues.
-- **The Logbook** — a year of contributions rendered as a brass calendar heatmap.
-
-<div align="center">
-<br />
-<img src="docs/screenshots/06-case-file.png" alt="Repository case file" width="80%" />
-<br />
-<em>A single repository's case file — README rendered in full, with a live commit service log.</em>
-<br /><br />
-<img src="docs/screenshots/05-logbook.png" alt="The Logbook contribution heatmap" width="80%" />
-<br />
-<em>The Logbook — a year at the desk, logged.</em>
-</div>
-
-> **Note:** the public GitHub API allows ~60 requests/hour per visitor (unauthenticated). The site fetches the repo list once and loads README / language / commit data lazily on demand, cached client-side, to stay well within that limit.
-
----
-
-## 🛠️ Tech Stack
-
-```
-Core              →  React 18 · TypeScript · Vite
-Styling           →  Tailwind CSS · Fraunces / Schibsted Grotesk / Spline Sans Mono
-Animations        →  Framer Motion (day/night cycle, page & section reveals)
-Routing & State   →  Wouter · Next Themes · TanStack Query
-Markdown          →  react-markdown · remark-gfm  (README rendering)
-Data              →  GitHub REST API + github-contributions-api (live, no token)
-Forms             →  Web3Forms (contact + newsletter)
-Deployment        →  Vercel (static SPA)
-```
-
-All site copy lives in [`client/src/data/content.ts`](client/src/data/content.ts) — edit that one file to change text; never the components.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js `>= 18`
-- npm
-
-### Local development
-
-```bash
-git clone https://github.com/kutluhangil/kutluhangul.com.git
-cd kutluhangul.com
+```sh
 npm install
-
-# Dev server (the port 5000 default may be taken by AirPlay on macOS)
-PORT=3000 npm run dev
+PORT=3000 npm run dev     # port 5000 may be taken by AirPlay on macOS
+npm run build
 ```
 
----
-
-## 📐 Project Structure
-
-```
-kutluhangul.com/
-├── client/
-│   ├── public/                 # Static assets (favicon, images, PDF resume, certificate)
-│   └── src/
-│       ├── components/         # Hero, About, Projects, Logbook, DayNightCycle, etc.
-│       ├── pages/              # Home · Blog · Now · Uses · Workshop · WorkshopRepo
-│       ├── data/content.ts     # ← all site copy lives here
-│       └── lib/
-├── server/                     # Express (local dev only — Vercel serves static)
-├── docs/screenshots/           # README imagery
-├── vite.config.ts
-├── vercel.json                 # SPA rewrite config
-└── package.json
-```
-
----
-
-## ☁️ Deployment
-
-Deployed on Vercel as a **static SPA** (`outputDirectory: dist/public`). The `vercel.json` rewrite sends every path to `index.html`, so client-side routes like `/workshop` and `/workshop/:repo` resolve on direct visits. Pushing to `main` triggers an automatic deploy.
-
----
-
-## 🤝 Contact
-
-* Email — [kutluhangil@gmail.com](mailto:kutluhangil@gmail.com)
-* LinkedIn — [Kutluhan Gül](https://linkedin.com/in/kutluhangil)
-* GitHub — [kutluhangil](https://github.com/kutluhangil)
-
----
+All site copy lives in `client/src/data/content.ts`: edit that one file to change text, never the components.
 
 <div align="center">
-
-Built by hand. No template. ✦ © 2026 Kutluhan Gül
-
+<br>
+<a href="https://github.com/kutluhangil"><img src="docs/media/signature.svg" width="100%" alt="Built by kutluhangil"></a>
+<sub>From front desk to front-end · the lights are always on.</sub>
 </div>
